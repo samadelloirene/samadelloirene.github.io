@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Irene Samadello — Personal Portfolio</title>
+
+  <meta name="description" content="The personal portfolio of Irene Samadello — Marketing, Strategy, Customer Experience, and everything beyond the office.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f6f3ed;
+      --paper: #fbfaf7;
+      --ink: #1d1d1b;
+      --muted: #68655f;
+      --accent: #c96f4a;
+      --line: #d9d4ca;
+      --green: #6f7865;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(246,243,237,.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(29,29,27,.08);
+    }
+
+    .nav-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--ink);
+      transition: width .3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 120px 7vw;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 78px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 7vw 90px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 7vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "27";
+      position: absolute;
+      right: -25px;
+      top: 130px;
+      font-family: "Playfair Display", serif;
+      font-size: 220px;
+      color: rgba(29,29,27,.035);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(64px, 10vw, 145px);
+      line-height: .82;
+      font-weight: 400;
+      letter-spacing: -.06em;
+      margin-bottom: 42px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .intro {
+      max-width: 650px;
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.55;
+    }
+
+    .intro strong {
+      font-weight: 500;
+    }
+
+    .hero-photo {
+      position: relative;
+      max-width: 460px;
+      justify-self: end;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: saturate(.92);
+    }
+
+    .photo-note {
+      position: absolute;
+      bottom: 20px;
+      left: -30px;
+      background: var(--paper);
+      padding: 10px 15px;
+      font-size: 11px;
+      transform: rotate(-3deg);
+      border: 1px solid var(--line);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 10vw;
+    }
+
+    .about-copy {
+      max-width: 720px;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .about-copy p + p {
+      margin-top: 25px;
+    }
+
+    .tiny-note {
+      margin-top: 45px;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 430px;
+    }
+
+    /* JOURNEY */
+
+    .journey {
+      background: var(--cream);
+    }
+
+    .journey-intro {
+      max-width: 700px;
+      margin-bottom: 100px;
+    }
+
+    .journey-intro p {
+      margin-top: 28px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .job {
+      border-top: 1px solid var(--line);
+      padding: 55px 0 75px;
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      gap: 7vw;
+    }
+
+    .job-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .job-meta .date {
+      display: block;
+      margin-bottom: 10px;
+      letter-spacing: .04em;
+    }
+
+    .job-meta .company {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .job h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+
+    .job p {
+      max-width: 780px;
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .job-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 38px;
+    }
+
+    .highlight {
+      border-left: 2px solid var(--accent);
+      padding-left: 18px;
+    }
+
+    .highlight h4 {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .highlight p {
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* EDUCATION */
+
+    .education {
+      background: #e9e5dc;
+    }
+
+    .education-placeholder {
+      margin-top: 60px;
+      padding: 40px;
+      border: 1px dashed #aaa59b;
+      color: var(--muted);
+      max-width: 750px;
+    }
+
+    /* BEYOND */
+
+    .beyond {
+      background: var(--paper);
+    }
+
+    .beyond-intro {
+      max-width: 760px;
+      margin-bottom: 90px;
+    }
+
+    .beyond-intro p {
+      font-size: 19px;
+      color: var(--muted);
+      margin-top: 28px;
+    }
+
+    .story {
+      margin-bottom: 150px;
+    }
+
+    .story-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .story-number {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .story h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(45px, 7vw, 90px);
+      font-weight: 400;
+      letter-spacing: -.04em;
+      line-height: .95;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 6vw;
+      align-items: start;
+    }
+
+    .story-grid.reverse {
+      grid-template-columns: .8fr 1fr;
+    }
+
+    .story-grid.reverse .story-text {
+      order: 2;
+    }
+
+    .story-grid.reverse .story-image {
+      order: 1;
+    }
+
+    .story-text {
+      max-width: 600px;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .story-image img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+    }
+
+    .story-caption {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .story:nth-of-type(3) .story-image {
+      transform: rotate(1.5deg);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      min-height: 70vh;
+      background: var(--ink);
+      color: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(60px, 10vw, 150px);
+    }
+
+    .contact-text {
+      max-width: 600px;
+      margin-top: 40px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #d5d2ca;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 45px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--paper);
+      font-size: 15px;
+      transition: color .25s ease, border-color .25s ease;
+    }
+
+    .contact-link:hover {
+      color: #f1a47e;
+      border-color: #f1a47e;
+    }
+
+    footer {
+      background: var(--ink);
+      color: #8f8d87;
+      padding: 30px 7vw;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      border-top: 1px solid #3b3a37;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 18px 5vw;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 11px;
+      }
+
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 140px 7vw 90px;
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(65px, 18vw, 110px);
+      }
+
+      .hero-photo {
+        justify-self: center;
+        max-width: 330px;
+      }
+
+      .about,
+      .story-grid,
+      .story-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .story-grid.reverse .story-text,
+      .story-grid.reverse .story-image {
+        order: initial;
+      }
+
+      section {
+        padding: 90px 7vw;
+      }
+
+      .job {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .job-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .story {
+        margin-bottom: 100px;
+      }
+
+      .story-heading {
+        display: block;
+      }
+
+      .story-number {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <a href="#home" class="nav-name">Irene Samadello</a>
+
+    <div class="nav-links">
+      <a href="#journey">Journey</a>
+      <a href="#education">Education</a>
+      <a href="#beyond">Beyond</a>
+      <a href="#contact">Let's connect</a>
+    </div>
+  </nav>
+
+
+  <!-- HOME -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-copy reveal">
+
+        <div class="section-label">A little corner of the internet</div>
+
+        <h1>
+          Irene<br>
+          <em>Samadello.</em>
+        </h1>
+
+        <div class="intro">
+          <p>
+            Hi there! I’m glad you found your way here.
+          </p>
+
+          <br>
+
+          <p>
+            I'm Irene, a 27-year-old professional currently based in Mannheim, Germany.
+          </p>
+
+          <br>
+
+          <p>
+            While I now call the vibrant Rhine-Neckar region home, I come from the area surrounding Venice, Italy, a place that shaped my appreciation for beauty, history, and a global outlook.
+          </p>
+
+          <br>
+
+          <p>
+            I'm a trilingual communicator dedicated to driving growth at the intersection of <strong>Marketing, Strategy, and Customer Experience.</strong>
+          </p>
+
+          <br>
+
+          <p>
+            This space is a window into how I work and who I am. Whether I’m navigating business challenges, spiking a volleyball, or climbing a new peak, I bring the same energy and dedication to everything I do.
+          </p>
+
+          <br>
+
+          <p>
+            More than anything, I hope this space sparks your curiosity.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="hero-photo reveal">
+
+        <img
+          src="Adobe%20Express%20-%20file%20%282%29.png"
+          alt="Irene Samadello"
+        >
+
+        <div class="photo-note">
+          currently somewhere between<br>
+          work & adventure ✦
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHAT THIS WEBSITE IS -->
+
+    <section class="about">
+
+      <div class="reveal">
+        <div class="section-label">01 — What is this?</div>
+        <h2>A little space beyond the CV.</h2>
+      </div>
+
+      <div class="about-copy reveal">
+
+        <p>
+          This website is a window into how I work and who I am.
+        </p>
+
+        <p>
+          It brings together my professional journey, education and skills, but also the things I enjoy outside of work.
+        </p>
+
+        <p>
+          I also like testing new tools and experimenting with technology and creative ways of doing things.
+        </p>
+
+        <p>
+          <strong>This website is one example of that curiosity.</strong>
+        </p>
+
+        <p class="tiny-note">
+          Yes, this website is custom-built. And yes, I am currently figuring out GitHub while building it.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROFESSIONAL JOURNEY -->
+
+    <section class="journey" id="journey">
+
+      <div class="journey-intro reveal">
+
+        <div class="section-label">02 — Professional Journey</div>
+
+        <h2>Where I've been learning by doing.</h2>
+
+        <p>
+          A few chapters from my professional journey — from startup life at Emma Sleep to my experience across Marketing and Go-to-Market at SAP.
+        </p>
+
+      </div>
+
+
+      <!-- SAP ASSOCIATE -->
+
+      <article class="job reveal">
+
+        <div class="job-meta">
+          <span class="date">May 2024 — August 2025</span>
+          <span class="company">SAP</span>
+        </div>
+
+        <div>
+
+          <h3>SAP Associate<br>— Product Marketing</h3>
+
+          <p>
+            My journey within the SAP Product Marketing team has been one of continuous evolution, marking my professional transition from Working Student to Associate Consultant. This period was much more than a role; it was a deep immersion into the future of enterprise technology. I found myself at the heart of a global shift, orchestrating GTM strategies that navigated the complex transition from On-Premise to Cloud.
+          </p>
+
+          <p>
+            By coordinating strategic touchpoints with C-level stakeholders across the USA, India, and EMEA, I didn’t just define requirements; I helped shape the product roadmap by bringing the voice of the customer to the table.
+          </p>
+
+          <p>
+            Immersed in an environment of incredible expertise, I realized through the mentorship of my senior colleagues that true success in this business isn't about selling, it’s about becoming a trusted business partner. I learned to balance precision with empathy, discovering that the real impact in a global landscape comes from building long-term strategic relationships. It was here that I truly understood how to bridge the gap between high-level strategy and human-centric consulting.
+          </p>
+
+          <div class="job-highlights">
+
+            <div class="highlight">
+              <h4>Customer Success</h4>
+              <p>Fostered long-term strategic relationships through direct engagement and high-touch consultancy to ensure solutions consistently exceed industry requirements and drive customer success.</p>
+            </div>
+
+            <div class="highlight">
+              <h4>Collaborative Innovation</h4>
+              <p>Facilitated sessions between partners and clients to gather insights, improving service offerings and product roadmaps through direct collaboration.</p>
+            </div>
+
+            <div class="highlight">
+              <h4>Digital Experience Design</h4>
+              <p>Focused on creating seamless registration flows and providing attendees with all necessary information to enhance their pre-event experience via AEM.</p>
+            </div>
+
+            <div class="highlight">
+              <h4>E2E Brand Experience</h4>
+              <p>Developed cohesive design assets, from digital welcome banners to visual and logistics details to ensure a premium brand experience during executive events.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SAP INTERN -->
+
+      <article class="job reveal">
+
+        <div class="job-meta">
+          <span class="date">November 2023 — May 2024</span>
+          <span class="company">SAP</span>
+        </div>
+
+        <div>
+
+          <h3>SAP Intern<br>— Industries Go-to-Market</h3>
+
+          <p>
+            My first step into the SAP ecosystem within the Industries Go-to-Market team was a deep dive into the complexity of the B2B landscape. This role was pivotal in shifting my perspective from selling a product to empowering an industry. I learned that to be a true strategic business partner, one must deeply understand the unique challenges of each sector, from market trends to competitor movements.
+          </p>
+
+          <p>
+            On the operational side, I honed a methodical and analytical approach by conducting market research and refining Sales Play Toolkits. More importantly, I began navigating the intricacies of Stakeholder Management, collaborating with senior colleagues across departments to ensure requirements and deadlines were met with precision. This experience taught me how a modular software giant operates and the importance of tailoring value propositions to meet the specific needs of diverse global industries.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- EMMA -->
+
+      <article class="job reveal">
+
+        <div class="job-meta">
+          <span class="date">September 2022 — March 2023</span>
+          <span class="company">Emma Sleep GmbH</span>
+        </div>
+
+        <div>
+
+          <h3>Intern<br>— Digital Marketing</h3>
+
+          <p>
+            My experience at Emma Sleep was a high-energy transition into the startup world, a strong and exciting contrast to the corporate structure of SAP. In this dynamic environment, I embraced the challenge of "wearing many hats", gaining cross-functional insights into Customer Service and Product teams while navigating fluid processes with agility.
+          </p>
+
+          <p>
+            I was entrusted with significant ownership of the Italian Influencer Marketing channel, managing E2E campaigns and budget negotiations. This role tested my resilience and strategic thinking, allowing me to merge data-driven logic with creative initiative. One of my proudest moments was proposing and launching a new product bundling strategy for our influencer collaborations, a move that bridged creative vision with commercial growth.
+          </p>
+
+          <p>
+            It was a period of intense professional stretching that solidified my ability to lead and innovate under pressure.
+          </p>
+
+          <div class="job-highlights">
+
+            <div class="highlight">
+              <h4>Active Community Building</h4>
+              <p>Managed social media interactions across Instagram and Facebook. I focused on nurturing our community by monitoring engagement and directly managing customer dialogues to ensure a consistent and positive brand voice.</p>
+            </div>
+
+            <div class="highlight">
+              <h4>Influencer & Content Strategy</h4>
+              <p>Orchestrated the editorial calendar by blending user-generated content with custom-designed graphics created in Canva. I managed the E2E influencer publishing schedule to drive brand awareness and promotional impact.</p>
+            </div>
+
+            <div class="highlight">
+              <h4>Data-Driven Growth</h4>
+              <p>Analyzed monthly performance using Tableau and Google Analytics 4. I leveraged tracking links and campaign codes to provide global management teams with clear insights into ROI and channel effectiveness.</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section class="education" id="education">
+
+      <div class="section-label reveal">03 — Education & Skills</div>
+
+      <div class="reveal">
+
+        <h2>Still to be filled<br>with the real stuff.</h2>
+
+        <div class="education-placeholder">
+          <p>
+            I am deliberately leaving this section empty for now rather than inventing anything.
+          </p>
+
+          <br>
+
+          <p>
+            Once the exact text from my existing Education & Skills page is added, this section will become a clean, visual representation of my actual education, languages and skills.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BEYOND THE OFFICE -->
+
+    <section class="beyond" id="beyond">
+
+      <div class="beyond-intro reveal">
+
+        <div class="section-label">04 — Beyond The Office</div>
+
+        <h2>The bits that don't fit on a CV.</h2>
+
+        <p>
+          Work is a big part of life, but definitely not all of it. Here are a few things that make me feel like myself outside the office.
+        </p>
+
+      </div>
+
+
+      <!-- MOUNTAIN -->
+
+      <article class="story reveal">
+
+        <div class="story-heading">
+          <span class="story-number">01</span>
+          <h3>Mountain Soul</h3>
+        </div>
+
+        <div class="story-grid">
+
+          <div class="story-text">
+
+            <p>
+              The mountains have been my sanctuary since forever. This is where I feel most at home, where my every worry fades and is replaced by a profound sense of peace.
+            </p>
+
+            <br>
+
+            <p>
+              To me, reaching the destination is never just about the view. It is about the mental and physical grit required to hike for 7 or 8 hours a day and the simple, shared joy of reaching a goal together with a group of friends.
+            </p>
+
+            <br>
+
+            <p>
+              Beyond the tranquility, I crave the adrenaline rush that only mountain peaks can provide.
+            </p>
+
+            <br>
+
+            <p>
+              This mountain soul made of resilience, collaboration, and desire to go beyond my limits is a core part of who I am both on the trails and out.
+            </p>
+
+          </div>
+
+          <div class="story-image">
+
+            <img
+              src="Montagna%20copy.jpg"
+              alt="Mountain landscape"
+            >
+
+            <div class="story-caption">
+              Somewhere above the clouds.
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CREATIVITY -->
+
+      <article class="story reveal">
+
+        <div class="story-heading">
+          <span class="story-number">02</span>
+          <h3>Creative Edge</h3>
+        </div>
+
+        <div class="story-grid reverse">
+
+          <div class="story-text">
+
+            <p>
+              Creativity has always been my way of exploring the world and thinking outside the box.
+            </p>
+
+            <br>
+
+            <p>
+              It’s a trait I probably inherited from my father. I grew up in his workshop, learning the art of working with wood and the vision required to build something from scratch.
+            </p>
+
+            <br>
+
+            <p>
+              Today, this DIY spirit translates takes many forms: from photography and acrylic painting to digital design. Whether I’m collaborating with my dad on a mug shelf for my kitchen or designing on a computer, I love the process of bringing an idea to life.
+            </p>
+
+          </div>
+
+          <div class="story-image">
+
+            <img
+              src="1774431164142.JPG"
+              alt="Creative work"
+            >
+
+            <div class="story-caption">
+              Making things, just because I can.
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- VOLLEYBALL -->
+
+      <article class="story reveal">
+
+        <div class="story-heading">
+          <span class="story-number">03</span>
+          <h3>Team Spirit</h3>
+        </div>
+
+        <div class="story-grid">
+
+          <div class="story-text">
+
+            <p>
+              From the age of 14 to 19, the volleyball court was my second home. Dedicating over 20 hours a week to training and competing taught me early on that excellence is built through daily discipline and ambition.
+            </p>
+
+            <br>
+
+            <p>
+              As a Libero, I learned to read people and stay one step ahead of the ball. More importantly, this role showed me that winning is not just about physical strength, it is about proactive communication and a clear strategy.
+            </p>
+
+            <br>
+
+            <p>
+              Those same competitive drive and strategic mindset follow me into my professional life today. I recently joined the VSG D1 team in Mannheim to keep working on my resilience, trust, and collective effort.
+            </p>
+
+          </div>
+
+          <div class="story-image">
+
+            <div style="
+              background:#d8d4ca;
+              min-height:420px;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              padding:40px;
+              text-align:center;
+              font-family:'Playfair Display',serif;
+              font-size:30px;
+            ">
+              Team spirit<br>
+              starts here.
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <div class="section-label">05 — Let's connect</div>
+
+      <h2 class="reveal">
+        Let's<br>
+        connect!
+      </h2>
+
+      <p class="contact-text reveal">
+        Whether you want to talk business, strategy, or just share a good travel story, I'd love to start a conversation with you!
+      </p>
+
+      <a
+        class="contact-link reveal"
+        href="mailto:"
+      >
+        Get in touch →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <span>© Irene Samadello</span>
+    <span>Made with curiosity ✦</span>
+  </footer>
+
+
+  <script>
+
+    /* Subtle scroll reveal */
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+
+  </script>
+
+</body>
+</html>
