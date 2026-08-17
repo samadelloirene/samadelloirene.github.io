@@ -1378,6 +1378,26 @@
       background: #dcebf2;
     }
 
+
+    .beyond-modal-video {
+      display: none;
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      background: #111;
+    }
+
+    .beyond-modal-video.active {
+      display: block;
+    }
+
+    @media (max-width: 800px) {
+      .beyond-modal-video {
+        min-height: 340px;
+      }
+    }
+
     .beyond-modal-image-wrap img {
       width: 100%;
       height: 100%;
@@ -2769,6 +2789,17 @@
 
           <div class="beyond-modal-image-wrap">
             <img id="beyondModalImage" src="" alt="">
+            <video
+              id="beyondModalVideo"
+              class="beyond-modal-video"
+              controls
+              muted
+              playsinline
+              preload="metadata"
+            >
+              <source src="mountain-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div class="beyond-modal-copy">
@@ -2899,6 +2930,7 @@
     const beyondModal = document.getElementById("beyondModal");
     const beyondModalClose = document.getElementById("beyondModalClose");
     const beyondModalImage = document.getElementById("beyondModalImage");
+    const beyondModalVideo = document.getElementById("beyondModalVideo");
     const beyondModalLabel = document.getElementById("beyondModalLabel");
     const beyondModalTitle = document.getElementById("beyondModalTitle");
     const beyondModalText = document.getElementById("beyondModalText");
@@ -2908,6 +2940,7 @@
         label: "01 — Mountain Soul",
         title: "Where the noise disappears.",
         image: "Climbing.jpg",
+        video: "mountain-video.mp4",
         html: `
           <p>
             The mountains are where I feel most at home — where every
@@ -2994,6 +3027,21 @@
       beyondModalTitle.textContent = story.title;
       beyondModalText.innerHTML = story.html;
 
+      if (beyondModalVideo) {
+        beyondModalVideo.pause();
+        beyondModalVideo.currentTime = 0;
+
+        if (story.video) {
+          beyondModalImage.style.display = "none";
+          beyondModalVideo.classList.add("active");
+          beyondModalVideo.currentTime = 0;
+          beyondModalVideo.play().catch(() => {});
+        } else {
+          beyondModalImage.style.display = "";
+          beyondModalVideo.classList.remove("active");
+        }
+      }
+
       beyondModal.classList.add("open");
       beyondModal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -3005,6 +3053,13 @@
       beyondModal.classList.remove("open");
       beyondModal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+
+      if (beyondModalVideo) {
+        beyondModalVideo.pause();
+        beyondModalVideo.currentTime = 0;
+        beyondModalVideo.classList.remove("active");
+        beyondModalImage.style.display = "";
+      }
     }
 
     beyondCards.forEach(card => {
