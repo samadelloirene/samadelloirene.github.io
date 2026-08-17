@@ -61,7 +61,7 @@
     body {
       background: var(--paper);
       color: var(--charcoal);
-      font-family: "DM Sans", sans-serif;
+      font-family: var(--font-sans);
       line-height: 1.6;
     }
 
@@ -189,7 +189,7 @@
     .language-note-label {
       display: block;
       margin-bottom: 6px;
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: 25px;
       line-height: 1.1;
     }
@@ -221,7 +221,7 @@
     }
 
     h2 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(38px, 5vw, 65px);
       font-weight: 400;
       line-height: 1.02;
@@ -264,7 +264,7 @@
       right: 3vw;
       top: 115px;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: 120px;
 
       color: rgba(93, 137, 155, .055);
@@ -279,7 +279,7 @@
     }
 
     .hero h1 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(58px, 8vw, 105px);
 
@@ -431,7 +431,7 @@
     }
 
     .job h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-weight: 400;
 
@@ -554,7 +554,7 @@
     }
 
     .education-main h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(34px, 4vw, 52px);
 
@@ -661,7 +661,7 @@
     }
 
     .skills-heading h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(35px, 4.5vw, 60px);
 
@@ -716,7 +716,7 @@
     }
 
     .skill-card h4 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: 30px;
 
@@ -807,7 +807,7 @@
     }
 
     .story h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(40px, 6vw, 76px);
 
@@ -1225,7 +1225,7 @@
     .beyond-card h3 {
       margin: 0;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(35px, 3.3vw, 54px);
       line-height: .92;
       font-weight: 400;
@@ -1260,7 +1260,7 @@
 
       color: white;
 
-      font-family: "Inter", sans-serif;
+      font-family: var(--font-sans);
       font-size: 9px;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -1287,7 +1287,7 @@
     }
 
     .volley-stats strong {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: 42px;
       line-height: .8;
     }
@@ -1311,7 +1311,7 @@
       align-items: baseline;
       gap: 10px;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(24px, 3vw, 42px);
       line-height: 1;
     }
@@ -1378,26 +1378,6 @@
       background: #dcebf2;
     }
 
-
-    .beyond-modal-video {
-      display: none;
-      width: 100%;
-      height: 100%;
-      min-height: 620px;
-      object-fit: cover;
-      background: #111;
-    }
-
-    .beyond-modal-video.active {
-      display: block;
-    }
-
-    @media (max-width: 800px) {
-      .beyond-modal-video {
-        min-height: 340px;
-      }
-    }
-
     .beyond-modal-image-wrap img {
       width: 100%;
       height: 100%;
@@ -1415,7 +1395,7 @@
     .beyond-modal-copy h3 {
       margin: 16px 0 30px;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(42px, 5vw, 70px);
       line-height: .9;
       font-weight: 400;
@@ -1708,6 +1688,96 @@
       display: block;
     }
 
+
+/* ===== AGILE PORTFOLIO POLISH ===== */
+.hero h1 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -.075em;
+  line-height: .9;
+}
+.hero h1 em {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+.hero {
+  min-height: 86vh;
+  padding-bottom: 125px;
+}
+.hero-copy { max-width: 760px; }
+.hero h1 { margin-bottom: 28px; }
+.scroll-cue {
+  position:absolute; left:50%; bottom:28px; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--muted); z-index:5;
+}
+.scroll-arrow { font-size:20px; line-height:1; animation:floatArrow 1.8s ease-in-out infinite; }
+@keyframes floatArrow {0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.about { padding-top: 85px; padding-bottom: 85px; }
+.about-copy p { max-width: 680px; }
+.job { transition: transform .35s ease; }
+.job:hover { transform: translateX(6px); }
+.job h3, .education-main h3, .skill-card h4, .story h3 { transition: letter-spacing .35s ease; }
+.job:hover h3, .education-main:hover h3 { letter-spacing:-.05em; }
+.skill-card { overflow:hidden; }
+.skill-card::after {
+  content:""; position:absolute; left:0; bottom:0; width:100%; height:2px;
+  background:var(--accent); transform:scaleX(0); transform-origin:left;
+  transition:transform .35s ease;
+}
+.skill-card:hover::after { transform:scaleX(1); }
+.beyond-intro, .journey-intro, .education-intro { position:relative; }
+.section-label { transition: letter-spacing .3s ease; }
+section:hover > .section-label { letter-spacing:.23em; }
+@media (max-width: 760px) {
+  .hero { min-height: auto; padding: 120px 7vw 105px; }
+  .scroll-cue { bottom: 22px; }
+  .hero h1 { font-size: clamp(52px, 15vw, 82px); }
+}
+
+
+    /* Typography: Montserrat + editorial serif accent */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap');
+
+    :root {
+      --font-sans: 'Montserrat', Arial, sans-serif;
+      --font-display: 'DM Serif Display', Georgia, serif;
+    }
+
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-family: var(--font-sans);
+    }
+
+    .hero h1,
+    .hero-title,
+    .display-title,
+    .serif-accent {
+      font-family: var(--font-display);
+    }
+
+    .hero h1,
+    .hero-title {
+      font-weight: 400;
+    }
+
+    .hero-subtitle,
+    .section-kicker,
+    .section-label,
+    .eyebrow,
+    .small-label,
+    .nav,
+    button,
+    .btn {
+      font-family: var(--font-sans);
+    }
+
 </style>
 </head>
 
@@ -1809,7 +1879,8 @@
         <span>Explore</span>
         <span class="scroll-arrow">↓</span>
       </a>
-    </section>
+      <a class="scroll-cue" href="#about"><span>Explore</span><span class="scroll-arrow">↓</span></a>
+</section>
 
 
     <!-- =========================================================
@@ -2789,17 +2860,6 @@
 
           <div class="beyond-modal-image-wrap">
             <img id="beyondModalImage" src="" alt="">
-            <video
-              id="beyondModalVideo"
-              class="beyond-modal-video"
-              controls
-              muted
-              playsinline
-              preload="metadata"
-            >
-              <source src="mountain-video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
           </div>
 
           <div class="beyond-modal-copy">
@@ -2930,7 +2990,6 @@
     const beyondModal = document.getElementById("beyondModal");
     const beyondModalClose = document.getElementById("beyondModalClose");
     const beyondModalImage = document.getElementById("beyondModalImage");
-    const beyondModalVideo = document.getElementById("beyondModalVideo");
     const beyondModalLabel = document.getElementById("beyondModalLabel");
     const beyondModalTitle = document.getElementById("beyondModalTitle");
     const beyondModalText = document.getElementById("beyondModalText");
@@ -2940,7 +2999,6 @@
         label: "01 — Mountain Soul",
         title: "Where the noise disappears.",
         image: "Climbing.jpg",
-        video: "mountain-video.mp4",
         html: `
           <p>
             The mountains are where I feel most at home — where every
@@ -3027,21 +3085,6 @@
       beyondModalTitle.textContent = story.title;
       beyondModalText.innerHTML = story.html;
 
-      if (beyondModalVideo) {
-        beyondModalVideo.pause();
-        beyondModalVideo.currentTime = 0;
-
-        if (story.video) {
-          beyondModalImage.style.display = "none";
-          beyondModalVideo.classList.add("active");
-          beyondModalVideo.currentTime = 0;
-          beyondModalVideo.play().catch(() => {});
-        } else {
-          beyondModalImage.style.display = "";
-          beyondModalVideo.classList.remove("active");
-        }
-      }
-
       beyondModal.classList.add("open");
       beyondModal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -3053,13 +3096,6 @@
       beyondModal.classList.remove("open");
       beyondModal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
-
-      if (beyondModalVideo) {
-        beyondModalVideo.pause();
-        beyondModalVideo.currentTime = 0;
-        beyondModalVideo.classList.remove("active");
-        beyondModalImage.style.display = "";
-      }
     }
 
     beyondCards.forEach(card => {
