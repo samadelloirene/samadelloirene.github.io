@@ -1141,50 +1141,45 @@
     .beyond-card:focus .beyond-card-image {
       transform: scale(1.09);
     }
+    .beyond-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
 
-   .beyond-card-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(15, 20, 22, .38) 0%,
+          rgba(15, 20, 22, .16) 28%,
+          rgba(15, 20, 22, .62) 55%,
+          rgba(15, 20, 22, .95) 100%
+        );
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(15,20,22,.42) 0%,
-      rgba(15,20,22,.18) 30%,
-      rgba(15,20,22,.58) 58%,
-      rgba(15,20,22,.94) 100%
-    );
+      transition: background .45s ease;
+    }
 
-  transition: background .45s ease;
-}
+    .creative-card .beyond-card-overlay {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(15, 20, 22, .42) 0%,
+          rgba(15, 20, 22, .20) 30%,
+          rgba(15, 20, 22, .95) 100%
+        );
+    }
 
-
-/* Creative card gets a slightly stronger overlay */
-
-.creative-card .beyond-card-overlay {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(15,20,22,.38),
-      rgba(15,20,22,.20) 35%,
-      rgba(15,20,22,.92) 100%
-    );
-}
-
-
-/* ADD THIS HERE */
-
-.beyond-card:hover .beyond-card-overlay,
-.beyond-card:focus .beyond-card-overlay {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(15,20,22,.32) 0%,
-      rgba(15,20,22,.12) 32%,
-      rgba(15,20,22,.92) 100%
-    );
-}
+    .beyond-card:hover .beyond-card-overlay,
+    .beyond-card:focus .beyond-card-overlay {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(15, 20, 22, .30) 0%,
+          rgba(15, 20, 22, .14) 28%,
+          rgba(15, 20, 22, .66) 55%,
+          rgba(15, 20, 22, .96) 100%
+        );
+    }
 
     .beyond-card-top {
       position: absolute;
@@ -1685,6 +1680,12 @@
       display: block;
     }
 
+
+    .education-copy strong {
+      font-weight: 650;
+      color: var(--charcoal);
+    }
+
 </style>
 </head>
 
@@ -1827,16 +1828,16 @@
           </strong>
         </p>
 
+        <div class="language-note">
+          <span class="language-note-label">Three languages. One global mindset.</span>
+          <span>German · English · Italian</span>
+        </div>
+
         <p class="tiny-note">
           Yes, this website is custom-built. And yes, I am currently
           figuring out GitHub while building it.
         </p>
-<div class="translation-disclaimer" id="translationDisclaimer">
-          <strong>Hinweis:</strong> Diese deutsche Version wurde vorerst automatisch übersetzt.
-          Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für Ihr Verständnis.
-        </div>
-
-      </div>
+</div>
 
     </section>
 
