@@ -51,7 +51,7 @@
     body {
       background: var(--paper);
       color: var(--charcoal);
-      font-family: "DM Sans", sans-serif;
+      font-family: var(--font-sans);
       line-height: 1.6;
     }
 
@@ -179,7 +179,7 @@
     .language-note-label {
       display: block;
       margin-bottom: 6px;
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: 25px;
       line-height: 1.1;
     }
@@ -211,7 +211,7 @@
     }
 
     h2 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(38px, 5vw, 65px);
       font-weight: 400;
       line-height: 1.02;
@@ -254,7 +254,7 @@
       right: 3vw;
       top: 115px;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: 120px;
 
       color: rgba(93, 137, 155, .055);
@@ -269,7 +269,7 @@
     }
 
     .hero h1 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(58px, 8vw, 105px);
 
@@ -421,7 +421,7 @@
     }
 
     .job h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-weight: 400;
 
@@ -544,7 +544,7 @@
     }
 
     .Ausbildung-main h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(34px, 4vw, 52px);
 
@@ -651,7 +651,7 @@
     }
 
     .Skills-heading h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(35px, 4.5vw, 60px);
 
@@ -706,7 +706,7 @@
     }
 
     .skill-card h4 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: 30px;
 
@@ -797,7 +797,7 @@
     }
 
     .story h3 {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
 
       font-size: clamp(40px, 6vw, 76px);
 
@@ -1215,7 +1215,7 @@
     .Beyond-card h3 {
       margin: 0;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(35px, 3.3vw, 54px);
       line-height: .92;
       font-weight: 400;
@@ -1250,7 +1250,7 @@
 
       color: white;
 
-      font-family: "Inter", sans-serif;
+      font-family: var(--font-sans);
       font-size: 9px;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -1277,7 +1277,7 @@
     }
 
     .volley-stats strong {
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: 42px;
       line-height: .8;
     }
@@ -1301,7 +1301,7 @@
       align-items: baseline;
       gap: 10px;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(24px, 3vw, 42px);
       line-height: 1;
     }
@@ -1368,26 +1368,6 @@
       background: #dcebf2;
     }
 
-
-    .beyond-modal-video {
-      display: none;
-      width: 100%;
-      height: 100%;
-      min-height: 620px;
-      object-fit: cover;
-      background: #111;
-    }
-
-    .beyond-modal-video.active {
-      display: block;
-    }
-
-    @media (max-width: 800px) {
-      .beyond-modal-video {
-        min-height: 340px;
-      }
-    }
-
     .Beyond-modal-image-wrap img {
       width: 100%;
       height: 100%;
@@ -1405,7 +1385,7 @@
     .Beyond-modal-copy h3 {
       margin: 16px 0 30px;
 
-      font-family: "Playfair Display", serif;
+      font-family: var(--font-sans);
       font-size: clamp(42px, 5vw, 70px);
       line-height: .9;
       font-weight: 400;
@@ -1727,6 +1707,96 @@
       background:transparent; color:var(--charcoal); cursor:pointer; font:inherit;
     }
     @media (max-width:600px){ .translation-notice{top:72px; right:20px;} }
+
+/* ===== AGILE PORTFOLIO POLISH ===== */
+.hero h1 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -.075em;
+  line-height: .9;
+}
+.hero h1 em {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+.hero {
+  min-height: 86vh;
+  padding-bottom: 125px;
+}
+.hero-copy { max-width: 760px; }
+.hero h1 { margin-bottom: 28px; }
+.scroll-cue {
+  position:absolute; left:50%; bottom:28px; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--muted); z-index:5;
+}
+.scroll-arrow { font-size:20px; line-height:1; animation:floatArrow 1.8s ease-in-out infinite; }
+@keyframes floatArrow {0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.about { padding-top: 85px; padding-bottom: 85px; }
+.about-copy p { max-width: 680px; }
+.job { transition: transform .35s ease; }
+.job:hover { transform: translateX(6px); }
+.job h3, .education-main h3, .skill-card h4, .story h3 { transition: letter-spacing .35s ease; }
+.job:hover h3, .education-main:hover h3 { letter-spacing:-.05em; }
+.skill-card { overflow:hidden; }
+.skill-card::after {
+  content:""; position:absolute; left:0; bottom:0; width:100%; height:2px;
+  background:var(--accent); transform:scaleX(0); transform-origin:left;
+  transition:transform .35s ease;
+}
+.skill-card:hover::after { transform:scaleX(1); }
+.beyond-intro, .journey-intro, .education-intro { position:relative; }
+.section-label { transition: letter-spacing .3s ease; }
+section:hover > .section-label { letter-spacing:.23em; }
+@media (max-width: 760px) {
+  .hero { min-height: auto; padding: 120px 7vw 105px; }
+  .scroll-cue { bottom: 22px; }
+  .hero h1 { font-size: clamp(52px, 15vw, 82px); }
+}
+
+
+    /* Typography: Montserrat + editorial serif accent */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap');
+
+    :root {
+      --font-sans: 'Montserrat', Arial, sans-serif;
+      --font-display: 'DM Serif Display', Georgia, serif;
+    }
+
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-family: var(--font-sans);
+    }
+
+    .hero h1,
+    .hero-title,
+    .display-title,
+    .serif-accent {
+      font-family: var(--font-display);
+    }
+
+    .hero h1,
+    .hero-title {
+      font-weight: 400;
+    }
+
+    .hero-subtitle,
+    .section-kicker,
+    .section-label,
+    .eyebrow,
+    .small-label,
+    .nav,
+    button,
+    .btn {
+      font-family: var(--font-sans);
+    }
+
 </style>
 </head>
 <body><div aria-live="polite" class="translation-notice" id="translationNotice" role="status"><strong>Hinweis</strong> Diese deutsche Version wurde vorerst automatisch übersetzt. Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für dein Verständnis.<button id="translationNoticeClose" type="button">OK</button></div>
@@ -1789,6 +1859,7 @@
   <span>Entdecken</span>
   <span class="scroll-arrow">↓</span>
 </a>
+  <a class="scroll-cue" href="#about"><span>Entdecken</span><span class="scroll-arrow">↓</span></a>
 </section>
 <!-- =========================================================
          ABOUT
@@ -2344,10 +2415,6 @@
 <div class="Beyond-modal-inner">
 <div class="Beyond-modal-image-wrap">
 <img alt="" id="BeyondModalImage" src=""/>
-<video id="beyondModalVideo" class="beyond-modal-video" controls muted playsinline preload="metadata">
-<source src="mountain-video.mp4" type="video/mp4"/>
-Dein Browser unterstützt das Video-Element nicht.
-</video>
 </div>
 <div class="Beyond-modal-copy">
 <div class="section-label" id="BeyondModalLabel"></div>
@@ -2439,17 +2506,15 @@ Dein Browser unterstützt das Video-Element nicht.
     const BeyondModal = document.getElementById("BeyondModal");
     const BeyondModalClose = document.getElementById("BeyondModalClose");
     const BeyondModalImage = document.getElementById("BeyondModalImage");
-    const BeyondModalVideo = document.getElementById("beyondModalVideo");
     const BeyondModalLabel = document.getElementById("BeyondModalLabel");
     const BeyondModalTitle = document.getElementById("BeyondModalTitle");
     const BeyondModalText = document.getElementById("BeyondModalText");
 
     const BeyondStories = {
       mountain: {
-        label: "01 — Bergmensch",
+        label: "01 — Mountain Soul",
         title: "Wo der Lärm verschwindet.",
         image: "Climbing.jpg",
-        video: "mountain-video.mp4",
         html: `
           <p>
             Die Berge sind der Ort, an dem ich mich am meisten zu Hause fühle — wo Sorgen verschwinden und einem tiefen Gefühl von Ruhe weichen.
@@ -2514,21 +2579,6 @@ Dein Browser unterstützt das Video-Element nicht.
       BeyondModalTitle.textContent = story.title;
       BeyondModalText.innerHTML = story.html;
 
-      if (BeyondModalVideo) {
-        BeyondModalVideo.pause();
-        BeyondModalVideo.currentTime = 0;
-
-        if (story.video) {
-          BeyondModalImage.style.display = "none";
-          BeyondModalVideo.classList.add("active");
-          BeyondModalVideo.currentTime = 0;
-          BeyondModalVideo.play().catch(() => {});
-        } else {
-          BeyondModalImage.style.display = "";
-          BeyondModalVideo.classList.remove("active");
-        }
-      }
-
       BeyondModal.classList.add("open");
       BeyondModal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -2540,13 +2590,6 @@ Dein Browser unterstützt das Video-Element nicht.
       BeyondModal.classList.remove("open");
       BeyondModal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
-
-      if (BeyondModalVideo) {
-        BeyondModalVideo.pause();
-        BeyondModalVideo.currentTime = 0;
-        BeyondModalVideo.classList.remove("active");
-        BeyondModalImage.style.display = "";
-      }
     }
 
     BeyondCards.forEach(card => {
