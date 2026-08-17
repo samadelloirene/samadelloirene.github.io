@@ -1657,33 +1657,79 @@
       }
 
     }
-
-  
-    /* =========================================================
-       GERMAN TRANSLATION NOTICE
-       ========================================================= */
-
-    .translation-disclaimer {
-      display: block;
-      max-width: 620px;
-      margin: 28px 0 0;
-      padding: 12px 16px;
-      border-left: 2px solid var(--charcoal);
-      background: rgba(255,255,255,.5);
-      color: var(--muted);
-      font-size: 10px;
-      line-height: 1.6;
-      letter-spacing: .02em;
-    }
-
-    .translation-disclaimer.visible {
-      display: block;
-    }
-
-
-    .education-copy strong {
+.education-copy strong {
       font-weight: 650;
       color: var(--charcoal);
+    }
+
+
+    /* German translation notice — temporary, unobtrusive, fixed */
+    .translation-notice {
+      position: fixed;
+      top: 88px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10000;
+      width: min(620px, calc(100vw - 40px));
+      padding: 16px 18px 16px 20px;
+      background: rgba(250, 249, 246, 0.97);
+      border: 1px solid rgba(39,43,45,.14);
+      box-shadow: 0 14px 40px rgba(20,24,26,.14);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      opacity: 1;
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    .translation-notice.is-hidden {
+      opacity: 0;
+      transform: translate(-50%, -14px);
+      pointer-events: none;
+    }
+
+    .translation-notice-copy {
+      flex: 1;
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--charcoal);
+    }
+
+    .translation-notice-copy strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .translation-notice-close {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 3px 0;
+      white-space: nowrap;
+    }
+
+    .translation-notice-close:hover {
+      color: var(--charcoal);
+    }
+
+    @media (max-width: 700px) {
+      .translation-notice {
+        top: 76px;
+        width: calc(100vw - 28px);
+        padding: 14px 15px;
+        gap: 12px;
+      }
+
+      .translation-notice-copy {
+        font-size: 11px;
+      }
     }
 
 </style>
@@ -1691,6 +1737,15 @@
 
 
 <body>
+
+  <div class="translation-notice" id="translationNotice" role="status">
+    <div class="translation-notice-copy">
+      <strong>Hinweis</strong>
+      Diese deutsche Version wurde vorerst automatisch übersetzt. Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für dein Verständnis.
+    </div>
+    <button class="translation-notice-close" id="translationNoticeClose" type="button" aria-label="Hinweis schließen">OK</button>
+  </div>
+
 
 
   <!-- =========================================================
@@ -1772,14 +1827,7 @@
         </div>
 
       </div>
-
-
-        <div class="translation-disclaimer" id="translationDisclaimer">
-          <strong>Hinweis:</strong> Diese deutsche Version wurde vorerst automatisch übersetzt.
-          Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für Ihr Verständnis.
-        </div>
-
-      <div class="hero-photo reveal">
+<div class="hero-photo reveal">
 
         <img
           src="Adobe%20Express%20-%20file%20%282%29.png"
@@ -3067,6 +3115,23 @@
 
   </script>
 
+
+
+  <script>
+    (function () {
+      const notice = document.getElementById("translationNotice");
+      const close = document.getElementById("translationNoticeClose");
+      if (!notice) return;
+
+      const hideNotice = () => {
+        notice.classList.add("is-hidden");
+        window.setTimeout(() => notice.remove(), 400);
+      };
+
+      if (close) close.addEventListener("click", hideNotice);
+      window.setTimeout(hideNotice, 7000);
+    })();
+  </script>
 
 </body>
 </html>
