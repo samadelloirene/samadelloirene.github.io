@@ -458,6 +458,223 @@
       color: var(--muted);
     }
 
+
+    /* =========================================================
+       EDUCATION & SKILLS
+       ========================================================= */
+
+    .education {
+      background: var(--blue-soft);
+    }
+
+    .education-intro {
+      max-width: 760px;
+      margin-bottom: 80px;
+    }
+
+    .education-intro p {
+      margin-top: 25px;
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .education-content {
+      width: 100%;
+    }
+
+    .education-item {
+      border-top: 1px solid var(--line);
+
+      padding: 48px 0 65px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 2.3fr;
+
+      gap: 6vw;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .education-year {
+      display: block;
+      margin-bottom: 9px;
+      letter-spacing: .04em;
+    }
+
+    .education-location {
+      display: block;
+    }
+
+    .education-main {
+      max-width: 780px;
+    }
+
+    .education-main h3 {
+      font-family: "Playfair Display", serif;
+
+      font-weight: 400;
+
+      font-size: clamp(30px, 3.3vw, 46px);
+
+      line-height: 1.05;
+
+      margin-bottom: 12px;
+    }
+
+    .degree {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .focus {
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: .02em;
+      margin-bottom: 25px;
+    }
+
+    .education-main p {
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .grade {
+      margin-top: 30px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 10px 16px;
+
+      border: 1px solid var(--line);
+
+      background: rgba(255, 255, 255, .55);
+    }
+
+    .grade span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .grade strong {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+
+    /* =========================================================
+       SKILLS
+       ========================================================= */
+
+    .skills-section {
+      border-top: 1px solid var(--line);
+
+      margin-top: 25px;
+
+      padding-top: 75px;
+    }
+
+    .skills-heading {
+      display: grid;
+
+      grid-template-columns: 1fr 2.3fr;
+
+      gap: 6vw;
+
+      margin-bottom: 55px;
+    }
+
+    .skills-heading h3 {
+      font-family: "Playfair Display", serif;
+
+      font-weight: 400;
+
+      font-size: clamp(35px, 4vw, 55px);
+
+      line-height: 1;
+
+      letter-spacing: -.03em;
+    }
+
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 1px;
+
+      background: var(--line);
+
+      border: 1px solid var(--line);
+    }
+
+    .skill-card {
+      background: var(--paper);
+
+      padding: 35px;
+
+      min-height: 250px;
+    }
+
+    .skill-number {
+      font-size: 10px;
+
+      letter-spacing: .13em;
+
+      color: var(--muted);
+
+      margin-bottom: 22px;
+    }
+
+    .skill-card h4 {
+      font-family: "Playfair Display", serif;
+
+      font-weight: 400;
+
+      font-size: 28px;
+
+      line-height: 1;
+
+      margin-bottom: 22px;
+    }
+
+    .skill-card ul {
+      list-style: none;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 10px 20px;
+    }
+
+    .skill-card li {
+      font-size: 13px;
+
+      color: var(--charcoal-soft);
+    }
+
+    .skill-card li span {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+
     /* =========================================================
        BEYOND
        ========================================================= */
@@ -676,7 +893,6 @@
 
       .nav-links {
         gap: 14px;
-
         font-size: 11px;
       }
 
@@ -736,6 +952,52 @@
         grid-template-columns: 1fr;
       }
 
+
+      /* EDUCATION MOBILE */
+
+      .education-intro {
+        margin-bottom: 55px;
+      }
+
+      .education-item {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        padding: 38px 0 50px;
+      }
+
+      .education-main h3 {
+        font-size: 36px;
+      }
+
+      .skills-section {
+        margin-top: 10px;
+        padding-top: 55px;
+      }
+
+      .skills-heading {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin-bottom: 35px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-card {
+        min-height: auto;
+        padding: 30px;
+      }
+
+      .skill-card ul {
+        grid-template-columns: 1fr 1fr;
+      }
+
+
       .story {
         margin-bottom: 90px;
       }
@@ -755,6 +1017,31 @@
 
         gap: 8px;
       }
+    }
+
+
+    /* =========================================================
+       VERY SMALL SCREENS
+       ========================================================= */
+
+    @media (max-width: 480px) {
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:last-child {
+        font-size: 10px;
+      }
+
+      .skill-card ul {
+        grid-template-columns: 1fr;
+      }
+
+      .grade {
+        width: fit-content;
+      }
+
     }
 
   </style>
@@ -791,9 +1078,6 @@
   <main id="home">
 
     <section class="hero">
-
-
-      <!-- LEFT SIDE -->
 
       <div class="hero-copy reveal">
 
@@ -841,8 +1125,6 @@
       </div>
 
 
-      <!-- RIGHT SIDE -->
-
       <div class="hero-photo reveal">
 
         <img
@@ -851,7 +1133,6 @@
         >
 
       </div>
-
 
     </section>
 
@@ -1212,433 +1493,426 @@
       </article>
 
     </section>
-<!-- =========================================================
-     EDUCATION & SKILLS
-     ========================================================= -->
-
-<section class="education" id="education">
-
-  <div class="education-intro reveal">
-
-    <div class="section-label">
-      03 — Education & Skills
-    </div>
-
-    <h2>
-      Built on curiosity,<br>
-      shaped by experience.
-    </h2>
-
-    <p>
-      A solid foundation in Economics and Management, specialized
-      in Marketing and Sales through international experiences.
-    </p>
-
-  </div>
 
 
-  <div class="education-content">
+    <!-- =========================================================
+         EDUCATION & SKILLS
+         ========================================================= -->
 
+    <section class="education" id="education">
 
-    <!-- =====================================================
-         MASTER
-         ===================================================== -->
+      <div class="education-intro reveal">
 
-    <article class="education-item reveal">
-
-      <div class="education-meta">
-
-        <span class="education-year">
-          2021 — 2025
-        </span>
-
-        <span class="education-location">
-          Mannheim, Germany
-        </span>
-
-      </div>
-
-
-      <div class="education-main">
-
-        <h3>
-          Universität Mannheim
-        </h3>
-
-        <div class="degree">
-          M.Sc. Management
+        <div class="section-label">
+          03 — Education & Skills
         </div>
 
-        <div class="focus">
-          Focus: Marketing & Sales
-        </div>
+        <h2>
+          Built on curiosity,<br>
+          shaped by experience.
+        </h2>
 
         <p>
-          Studying at one of Germany's top business schools,
-          surrounded by some of the most talented students
-          worldwide, has been a deeply rewarding challenge.
-          A defining moment of this journey was writing my
-          thesis with the Chair of Professor Homburg, the very
-          author whose books formed the foundation of my
-          Bachelor's studies. It was a powerful "full-circle"
-          moment that made me realize how far I've come.
-        </p>
-
-        <p>
-          Beyond the academic prestige, Mannheim taught me a
-          new way of thinking: prioritizing practicality over
-          rote learning. Over these years, Germany has become
-          more than just a place of study; it's where I've
-          consolidated my German skills, built lasting
-          friendships, and truly started to feel at home.
-        </p>
-
-        <div class="grade">
-
-          <span>
-            Final Grade
-          </span>
-
-          <strong>
-            1.6
-          </strong>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- =====================================================
-         EXCHANGE
-         ===================================================== -->
-
-    <article class="education-item reveal">
-
-      <div class="education-meta">
-
-        <span class="education-year">
-          2019 — 2020
-        </span>
-
-        <span class="education-location">
-          Augsburg, Germany
-        </span>
-
-      </div>
-
-
-      <div class="education-main">
-
-        <h3>
-          Universität Augsburg
-        </h3>
-
-        <div class="degree">
-          Exchange Semester
-        </div>
-
-        <div class="focus">
-          Focus: Media Marketing & PM
-        </div>
-
-        <p>
-          This semester was the true turning point that
-          redefined my path. It was here, while successfully
-          tackling exams in both German and English, that I
-          realized I wanted to build my future in Germany.
-          This experience was pivotal in my decision to pursue
-          my Master's at the University of Mannheim, as it gave
-          me the confidence to thrive in the German academic
-          and professional system.
-        </p>
-
-        <p>
-          Living in a global community and pushing past my own
-          boundaries, I discovered a strength and resilience
-          I didn't know I had. I realized I could navigate
-          challenges and adapt to any environment, a realization
-          that still drives my ambition and my can-do attitude
-          in everything I do.
+          A solid foundation in Economics and Management, specialized
+          in Marketing and Sales through international experiences.
         </p>
 
       </div>
 
-    </article>
+
+      <div class="education-content">
 
 
-    <!-- =====================================================
-         BACHELOR
-         ===================================================== -->
+        <!-- MASTER -->
 
-    <article class="education-item reveal">
+        <article class="education-item reveal">
 
-      <div class="education-meta">
+          <div class="education-meta">
 
-        <span class="education-year">
-          2017 — 2020
-        </span>
+            <span class="education-year">
+              2021 — 2025
+            </span>
 
-        <span class="education-location">
-          Trento, Italy
-        </span>
+            <span class="education-location">
+              Mannheim, Germany
+            </span>
 
-      </div>
+          </div>
 
 
-      <div class="education-main">
+          <div class="education-main">
 
-        <h3>
-          Università di Trento
-        </h3>
+            <h3>
+              Universität Mannheim
+            </h3>
 
-        <div class="degree">
-          B.Sc. Economics & Management
-        </div>
+            <div class="degree">
+              M.Sc. Management
+            </div>
 
-        <div class="focus">
-          Focus: Market Analysis & Statistics
-        </div>
+            <div class="focus">
+              Focus: Marketing & Sales
+            </div>
 
-        <p>
-          My journey began here, where I developed a rigorous
-          foundation in quantitative analysis and economic theory,
-          graduating with top marks. Beyond the academic structure,
-          this experience was my first real step into an international
-          mindset. Living away from home for the first time, I grew
-          immensely, not just as a student, but as an individual.
-        </p>
+            <p>
+              Studying at one of Germany's top business schools,
+              surrounded by some of the most talented students
+              worldwide, has been a deeply rewarding challenge.
+              A defining moment of this journey was writing my
+              thesis with the Chair of Professor Homburg, the very
+              author whose books formed the foundation of my
+              Bachelor's studies. It was a powerful "full-circle"
+              moment that made me realize how far I've come.
+            </p>
 
-        <p>
-          It was during these years that I learned the importance
-          of looking at the "why" behind numbers, a skill that has
-          been the backbone of my professional logic ever since.
-        </p>
+            <p>
+              Beyond the academic prestige, Mannheim taught me a
+              new way of thinking: prioritizing practicality over
+              rote learning. Over these years, Germany has become
+              more than just a place of study; it's where I've
+              consolidated my German skills, built lasting
+              friendships, and truly started to feel at home.
+            </p>
 
-        <div class="grade">
+            <div class="grade">
 
-          <span>
-            Final Grade
-          </span>
+              <span>
+                Final Grade
+              </span>
 
-          <strong>
-            110/110
-          </strong>
+              <strong>
+                1.6
+              </strong>
 
-        </div>
+            </div>
 
-      </div>
+          </div>
 
-    </article>
+        </article>
 
 
-    <!-- =====================================================
-         SKILLS
-         ===================================================== -->
+        <!-- EXCHANGE -->
 
-    <div class="skills-section reveal">
+        <article class="education-item reveal">
 
-      <div class="skills-heading">
+          <div class="education-meta">
 
-        <div>
+            <span class="education-year">
+              2019 — 2020
+            </span>
 
-          <div class="section-label">
-            Skills
+            <span class="education-location">
+              Augsburg, Germany
+            </span>
+
+          </div>
+
+
+          <div class="education-main">
+
+            <h3>
+              Universität Augsburg
+            </h3>
+
+            <div class="degree">
+              Exchange Semester
+            </div>
+
+            <div class="focus">
+              Focus: Media Marketing & PM
+            </div>
+
+            <p>
+              This semester was the true turning point that
+              redefined my path. It was here, while successfully
+              tackling exams in both German and English, that I
+              realized I wanted to build my future in Germany.
+              This experience was pivotal in my decision to pursue
+              my Master's at the University of Mannheim, as it gave
+              me the confidence to thrive in the German academic
+              and professional system.
+            </p>
+
+            <p>
+              Living in a global community and pushing past my own
+              boundaries, I discovered a strength and resilience
+              I didn't know I had. I realized I could navigate
+              challenges and adapt to any environment, a realization
+              that still drives my ambition and my can-do attitude
+              in everything I do.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- BACHELOR -->
+
+        <article class="education-item reveal">
+
+          <div class="education-meta">
+
+            <span class="education-year">
+              2017 — 2020
+            </span>
+
+            <span class="education-location">
+              Trento, Italy
+            </span>
+
+          </div>
+
+
+          <div class="education-main">
+
+            <h3>
+              Università di Trento
+            </h3>
+
+            <div class="degree">
+              B.Sc. Economics & Management
+            </div>
+
+            <div class="focus">
+              Focus: Market Analysis & Statistics
+            </div>
+
+            <p>
+              My journey began here, where I developed a rigorous
+              foundation in quantitative analysis and economic theory,
+              graduating with top marks. Beyond the academic structure,
+              this experience was my first real step into an international
+              mindset. Living away from home for the first time, I grew
+              immensely, not just as a student, but as an individual.
+            </p>
+
+            <p>
+              It was during these years that I learned the importance
+              of looking at the "why" behind numbers, a skill that has
+              been the backbone of my professional logic ever since.
+            </p>
+
+            <div class="grade">
+
+              <span>
+                Final Grade
+              </span>
+
+              <strong>
+                110/110
+              </strong>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SKILLS -->
+
+        <div class="skills-section reveal">
+
+          <div class="skills-heading">
+
+            <div>
+
+              <div class="section-label">
+                Skills
+              </div>
+
+            </div>
+
+            <h3>
+              Tools I use<br>
+              to make things happen.
+            </h3>
+
+          </div>
+
+
+          <div class="skills-grid">
+
+
+            <!-- DESIGN & CREATIVITY -->
+
+            <div class="skill-card">
+
+              <div class="skill-number">
+                01 — DESIGN & CREATIVITY
+              </div>
+
+              <h4>
+                Design & Creativity
+              </h4>
+
+              <ul>
+
+                <li>
+                  Adobe Illustrator
+                  <span>(Basic)</span>
+                </li>
+
+                <li>
+                  AEM
+                </li>
+
+                <li>
+                  Canva Pro
+                </li>
+
+                <li>
+                  CapCut
+                </li>
+
+                <li>
+                  Figma
+                  <span>(Basic)</span>
+                </li>
+
+                <li>
+                  Google Sites
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- PRODUCTIVITY -->
+
+            <div class="skill-card">
+
+              <div class="skill-number">
+                02 — PRODUCTIVITY
+              </div>
+
+              <h4>
+                Productivity
+              </h4>
+
+              <ul>
+
+                <li>
+                  ChatGPT
+                </li>
+
+                <li>
+                  Gemini
+                </li>
+
+                <li>
+                  Microsoft Office
+                </li>
+
+                <li>
+                  Excel
+                </li>
+
+                <li>
+                  PowerPoint
+                </li>
+
+                <li>
+                  Word
+                </li>
+
+                <li>
+                  SharePoint
+                </li>
+
+                <li>
+                  Outlook
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- OPERATIONS -->
+
+            <div class="skill-card">
+
+              <div class="skill-number">
+                03 — OPERATIONS
+              </div>
+
+              <h4>
+                Operations
+              </h4>
+
+              <ul>
+
+                <li>
+                  Freshdesk
+                </li>
+
+                <li>
+                  Magento
+                </li>
+
+                <li>
+                  Salesforce
+                  <span>(Basic)</span>
+                </li>
+
+                <li>
+                  SAP Concur
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- DATA & ANALYSIS -->
+
+            <div class="skill-card">
+
+              <div class="skill-number">
+                04 — DATA & ANALYSIS
+              </div>
+
+              <h4>
+                Data & Analysis
+              </h4>
+
+              <ul>
+
+                <li>
+                  Bitly
+                </li>
+
+                <li>
+                  Google Analytics 4
+                </li>
+
+                <li>
+                  Meta Business Suite
+                </li>
+
+                <li>
+                  SAP Analytics Cloud
+                </li>
+
+                <li>
+                  Tableau
+                </li>
+
+              </ul>
+
+            </div>
+
           </div>
 
         </div>
 
-        <h3>
-          Tools I use<br>
-          to make things happen.
-        </h3>
-
       </div>
 
+    </section>
 
-      <div class="skills-grid">
-
-
-        <!-- DESIGN & CREATIVITY -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            01 — DESIGN & CREATIVITY
-          </div>
-
-          <h4>
-            Design & Creativity
-          </h4>
-
-          <ul>
-
-            <li>
-              Adobe Illustrator
-              <span>(Basic)</span>
-            </li>
-
-            <li>
-              AEM
-            </li>
-
-            <li>
-              Canva Pro
-            </li>
-
-            <li>
-              CapCut
-            </li>
-
-            <li>
-              Figma
-              <span>(Basic)</span>
-            </li>
-
-            <li>
-              Google Sites
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- PRODUCTIVITY -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            02 — PRODUCTIVITY
-          </div>
-
-          <h4>
-            Productivity
-          </h4>
-
-          <ul>
-
-            <li>
-              ChatGPT
-            </li>
-
-            <li>
-              Gemini
-            </li>
-
-            <li>
-              Microsoft Office
-            </li>
-
-            <li>
-              Excel
-            </li>
-
-            <li>
-              PowerPoint
-            </li>
-
-            <li>
-              Word
-            </li>
-
-            <li>
-              SharePoint
-            </li>
-
-            <li>
-              Outlook
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- OPERATIONS -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            03 — OPERATIONS
-          </div>
-
-          <h4>
-            Operations
-          </h4>
-
-          <ul>
-
-            <li>
-              Freshdesk
-            </li>
-
-            <li>
-              Magento
-            </li>
-
-            <li>
-              Salesforce
-              <span>(Basic)</span>
-            </li>
-
-            <li>
-              SAP Concur
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- DATA & ANALYSIS -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            04 — DATA & ANALYSIS
-          </div>
-
-          <h4>
-            Data & Analysis
-          </h4>
-
-          <ul>
-
-            <li>
-              Bitly
-            </li>
-
-            <li>
-              Google Analytics 4
-            </li>
-
-            <li>
-              Meta Business Suite
-            </li>
-
-            <li>
-              SAP Analytics Cloud
-            </li>
-
-            <li>
-              Tableau
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-   
 
     <!-- =========================================================
          BEYOND THE OFFICE
@@ -1903,9 +2177,11 @@
         a good travel story, I'd love to start a conversation with you!
       </p>
 
+      <!-- CHANGE THIS EMAIL ADDRESS -->
+
       <a
         class="contact-link reveal"
-        href="mailto:"
+        href="mailto:YOUR-EMAIL@example.com"
       >
         Get in touch →
       </a>
