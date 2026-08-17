@@ -161,7 +161,7 @@
       border-left: 1px solid var(--line);
     }
 
-    .language-switcher button {
+    .language-switcher a {
       border: 0;
       background: transparent;
       color: var(--muted);
@@ -173,8 +173,8 @@
       transition: color .2s ease;
     }
 
-    .language-switcher button:hover,
-    .language-switcher button.active {
+    .language-switcher a:hover,
+    .language-switcher a.active {
       color: var(--charcoal);
       font-weight: 600;
     }
@@ -1829,13 +1829,7 @@
           Yes, this website is custom-built. And yes, I am currently
           figuring out GitHub while building it.
         </p>
-
-        <div class="language-note">
-          <span class="language-note-label">Three languages. One global mindset.</span>
-          <span>German · English · Italian</span>
-        </div>
-
-        <div class="translation-disclaimer" id="translationDisclaimer">
+<div class="translation-disclaimer" id="translationDisclaimer">
           <strong>Hinweis:</strong> Diese deutsche Version wurde vorerst automatisch übersetzt.
           Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für Ihr Verständnis.
         </div>
@@ -3045,38 +3039,7 @@
         closeBeyondStory();
       }
     });
-
-
-    const languageButtons = document.querySelectorAll(".language-switcher button");
-    const translationDisclaimer = document.getElementById("translationDisclaimer");
-
-    // If the page was opened with ?de=1, show the German translation notice.
-    if (new URLSearchParams(window.location.search).get("de") === "1") {
-      translationDisclaimer?.classList.add("visible");
-    }
-
-    function translatePortfolio(lang) {
-      const baseUrl = window.location.origin + window.location.pathname + "?de=1";
-
-      if (lang === "en") {
-        window.location.href = window.location.origin + window.location.pathname;
-        return;
-      }
-
-      if (lang === "de") {
-        const translatedUrl =
-          "https://translate.google.com/translate?sl=en&tl=de&u=" +
-          encodeURIComponent(baseUrl);
-
-        window.location.href = translatedUrl;
-      }
-    }
-
-    languageButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        translatePortfolio(button.dataset.lang);
-      });
-    });
+});
 
 
     /* =========================================================
