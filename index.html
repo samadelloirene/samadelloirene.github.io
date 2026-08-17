@@ -739,109 +739,460 @@
 
 
     /* =========================================================
-       BEYOND
+       BEYOND THE OFFICE — INTERACTIVE EDITORIAL EXPERIENCE
        ========================================================= */
 
     .beyond {
-      background: var(--paper);
+      position: relative;
+      background: #f7f9f8;
+      padding: 120px 0 0;
+      overflow: hidden;
     }
 
     .beyond-intro {
-      max-width: 760px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 7vw 110px;
+      position: relative;
+    }
 
-      margin-bottom: 80px;
+    .beyond-intro h2 {
+      max-width: 900px;
+      font-size: clamp(58px, 9vw, 125px);
+      line-height: .88;
     }
 
     .beyond-intro p {
-      font-size: 17px;
-
-      color: var(--muted);
-
-      margin-top: 25px;
+      max-width: 560px;
+      margin-top: 35px;
     }
 
-    .story {
-      margin-bottom: 125px;
+    .beyond-intro::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 70px;
+      background: var(--line);
     }
 
-    .story-heading {
+    .beyond-nav {
+      position: sticky;
+      top: 73px;
+      z-index: 20;
       display: flex;
-
-      align-items: baseline;
-
-      gap: 18px;
-
-      margin-bottom: 35px;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      background: rgba(247,249,248,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(39,43,45,.08);
     }
 
-    .story-number {
-      font-size: 11px;
+    .beyond-nav a {
+      padding: 8px 14px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: background .3s ease, color .3s ease, border-color .3s ease, transform .3s ease;
+    }
 
+    .beyond-nav a:hover {
+      transform: translateY(-2px);
+      border-color: var(--line);
+      color: var(--charcoal);
+    }
+
+    .beyond-nav a.active {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .beyond-chapter {
+      position: relative;
+      min-height: 100vh;
+      padding: 110px 7vw 140px;
+      display: grid;
+      grid-template-columns: minmax(180px,.45fr) minmax(0,1.55fr);
+      gap: 5vw;
+    }
+
+    .beyond-chapter + .beyond-chapter {
+      border-top: 1px solid var(--line);
+    }
+
+    .chapter-meta {
+      position: sticky;
+      top: 135px;
+      align-self: start;
+    }
+
+    .chapter-number {
+      font-family: "Playfair Display", serif;
+      font-size: 80px;
+      line-height: .8;
+      color: rgba(93,137,155,.16);
+    }
+
+    .chapter-type {
+      margin-top: 30px;
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
       color: var(--muted);
     }
 
-    .story h3 {
+    .chapter-keywords {
+      margin-top: 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .chapter-keywords span {
+      font-size: 10px;
+      color: var(--charcoal-soft);
+    }
+
+    .chapter-keywords span::before {
+      content: "↳ ";
+      color: var(--accent);
+    }
+
+    .chapter-main { min-width: 0; }
+
+    .chapter-title {
+      margin-bottom: 45px;
       font-family: "Playfair Display", serif;
-
-      font-size: clamp(40px, 6vw, 76px);
-
+      font-size: clamp(58px, 8vw, 110px);
+      line-height: .85;
       font-weight: 400;
+      letter-spacing: -.055em;
+    }
 
-      letter-spacing: -.04em;
+    .chapter-title em { color: var(--accent); }
 
+    .mountain-stage {
+      position: relative;
+      height: min(72vh, 720px);
+      overflow: hidden;
+      background: #dcebf2;
+    }
+
+    .mountain-stage img {
+      width: 100%;
+      height: 115%;
+      object-fit: cover;
+      transform: scale(1.04);
+      transition: transform 1.4s cubic-bezier(.2,.7,.2,1);
+      will-change: transform;
+    }
+
+    .mountain-stage:hover img { transform: scale(1.09); }
+
+    .mountain-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(20,30,34,.2), transparent 35%, rgba(20,30,34,.3));
+      color: white;
+    }
+
+    .mountain-topline, .mountain-bottomline {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .mountain-statement {
+      max-width: 620px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 5vw, 70px);
       line-height: .95;
     }
 
-    .story-grid {
-      display: grid;
+    .mountain-statement span { display: inline-block; opacity: .75; }
 
-      grid-template-columns: 1fr .8fr;
-
-      gap: 6vw;
-
-      align-items: start;
+    .chapter-copy {
+      max-width: 680px;
+      margin-top: 55px;
+      font-size: 16px;
+      line-height: 1.85;
     }
 
-    .story-grid.reverse {
-      grid-template-columns: .8fr 1fr;
+    .chapter-copy p + p { margin-top: 25px; }
+
+    .chapter-pullquote {
+      margin: 70px 0;
+      padding-left: 25px;
+      border-left: 2px solid var(--accent);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.05;
     }
 
-    .story-grid.reverse .story-text {
-      order: 2;
+    .creative-gallery {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      cursor: grab;
+      touch-action: pan-y;
+      user-select: none;
     }
 
-    .story-grid.reverse .story-image {
-      order: 1;
+    .creative-gallery:active { cursor: grabbing; }
+
+    .creative-track {
+      display: flex;
+      gap: 24px;
+      padding: 70px 5vw;
+      width: max-content;
+      transform: translateX(0);
+      will-change: transform;
     }
 
-    .story-text {
-      max-width: 600px;
-
-      font-size: 15px;
-
-      line-height: 1.75;
+    .creative-card {
+      position: relative;
+      width: clamp(260px, 29vw, 420px);
+      height: clamp(360px, 48vw, 560px);
+      flex: 0 0 auto;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 25px 70px rgba(39,43,45,.12);
+      transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease;
     }
 
-    .story-image img {
+    .creative-card:nth-child(2) { transform: rotate(2deg) translateY(-30px); }
+    .creative-card:nth-child(3) { transform: rotate(-1.5deg) translateY(15px); }
+    .creative-card:nth-child(4) { transform: rotate(1.5deg) translateY(-15px); }
+
+    .creative-card:hover {
+      transform: rotate(0deg) translateY(-18px) scale(1.025);
+      box-shadow: 0 35px 90px rgba(39,43,45,.18);
+    }
+
+    .creative-card img {
       width: 100%;
-
-      max-height: 600px;
-
+      height: 100%;
       object-fit: cover;
+      transition: transform .8s cubic-bezier(.2,.7,.2,1);
     }
 
-    .story-caption {
-      margin-top: 9px;
+    .creative-card:hover img { transform: scale(1.06); }
 
+    .creative-card-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 13px 15px;
+      background: rgba(250,252,252,.92);
+      backdrop-filter: blur(12px);
       font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
 
+    .gallery-hint {
+      margin-top: 15px;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
       color: var(--muted);
     }
 
-    .story:nth-of-type(3) .story-image {
-      transform: rotate(1.2deg);
+    .volleyball-stage {
+      position: relative;
+      min-height: 650px;
+      padding: 45px;
+      overflow: hidden;
+      background: var(--charcoal);
+      color: var(--paper);
     }
 
+    .volley-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .55;
+      filter: grayscale(.15);
+      transform: scale(1.04);
+      transition: transform 1.2s ease, opacity .6s ease;
+    }
+
+    .volleyball-stage:hover .volley-image { transform: scale(1.08); opacity: .68; }
+
+    .volley-content {
+      position: relative;
+      z-index: 2;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .volley-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .volley-number {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(90px, 16vw, 220px);
+      line-height: .7;
+      color: rgba(255,255,255,.88);
+    }
+
+    .volley-middle { max-width: 720px; }
+
+    .volley-middle h4 {
+      margin-bottom: 18px;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #c9dce3;
+    }
+
+    .volley-middle p {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4.5vw, 62px);
+      line-height: 1;
+    }
+
+    .volley-bottom { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .volley-pill {
+      padding: 9px 13px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .volley-pill:hover {
+      background: rgba(255,255,255,.12);
+      transform: translateY(-2px);
+    }
+
+    .beyond-finale {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 7vw;
+      background: var(--blue);
+      text-align: center;
+    }
+
+    .beyond-finale-inner { max-width: 900px; }
+
+    .beyond-finale p {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 6vw, 82px);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    .beyond-finale small {
+      display: block;
+      margin-top: 35px;
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: rgba(20,24,26,.94);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s ease;
+    }
+
+    .gallery-lightbox.open { opacity: 1; pointer-events: auto; }
+
+    .gallery-lightbox img {
+      max-width: min(100%, 1100px);
+      max-height: 88vh;
+      object-fit: contain;
+      transform: scale(.96);
+      transition: transform .45s ease;
+    }
+
+    .gallery-lightbox.open img { transform: scale(1); }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      border: 0;
+      background: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 800px) {
+      .beyond { padding-top: 80px; }
+      .beyond-intro { padding-bottom: 70px; }
+      .beyond-nav { justify-content: flex-start; overflow-x: auto; }
+      .beyond-chapter {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 75px 7vw 95px;
+      }
+      .chapter-meta { position: static; }
+      .chapter-number { font-size: 55px; }
+      .chapter-keywords { flex-direction: row; flex-wrap: wrap; margin-top: 20px; }
+      .chapter-title { margin-bottom: 30px; }
+      .mountain-stage { height: 65vh; min-height: 480px; }
+      .mountain-overlay { padding: 22px; }
+      .mountain-bottomline { display: block; }
+      .mountain-bottomline span { display: block; margin-top: 7px; }
+      .creative-gallery { min-height: 520px; overflow-x: auto; }
+      .creative-track { padding: 45px 7vw; }
+      .creative-card { width: 72vw; height: 100vw; max-height: 500px; }
+      .volleyball-stage { min-height: 560px; padding: 25px; }
+      .volley-content { min-height: 510px; }
+      .volley-number { font-size: 110px; }
+      .beyond-finale { min-height: 60vh; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mountain-stage img,
+      .creative-card,
+      .creative-card img,
+      .volley-image,
+      .gallery-lightbox,
+      .gallery-lightbox img { transition: none; }
+    }
 
     /* =========================================================
        CONTACT
@@ -2043,54 +2394,59 @@
     <section class="beyond" id="beyond">
 
       <div class="beyond-intro reveal">
-
-        <div class="section-label">
-          04 — Beyond The Office
-        </div>
-
-        <h2>
-          The bits that don't<br>
-          fit on a CV.
-        </h2>
-
+        <div class="section-label">04 — Beyond The Office</div>
+        <h2>The bits that don't<br>fit on a CV.</h2>
         <p>
           Work is a big part of life, but definitely not all of it.
           Here are a few things that make me feel like myself
           outside the office.
         </p>
-
       </div>
 
+      <nav class="beyond-nav" aria-label="Beyond the Office chapters">
+        <a href="#mountains" class="active">01 — Mountains</a>
+        <a href="#creative">02 — Creativity</a>
+        <a href="#volleyball">03 — Volleyball</a>
+      </nav>
 
-      <!-- MOUNTAIN -->
+      <article class="beyond-chapter" id="mountains">
+        <aside class="chapter-meta">
+          <div class="chapter-number">01</div>
+          <div class="chapter-type">Mountain Soul</div>
+          <div class="chapter-keywords">
+            <span>Peace</span>
+            <span>Grit</span>
+            <span>Adrenaline</span>
+            <span>Resilience</span>
+          </div>
+        </aside>
 
-      <article class="story reveal">
+        <div class="chapter-main">
+          <h3 class="chapter-title">Mountain<br><em>Soul.</em></h3>
 
-        <div class="story-heading">
+          <div class="mountain-stage">
+            <img src="Montagna%20copy.jpg" alt="Mountain landscape">
+            <div class="mountain-overlay">
+              <div class="mountain-topline">
+                <span>Somewhere above the clouds</span>
+                <span>01 / 03</span>
+              </div>
+              <div class="mountain-statement">
+                The mountains have been <span>my sanctuary since forever.</span>
+              </div>
+              <div class="mountain-bottomline">
+                <span>7–8 HOURS / DAY</span>
+                <span>PEACE → GRIT → ADRENALINE</span>
+              </div>
+            </div>
+          </div>
 
-          <span class="story-number">
-            01
-          </span>
-
-          <h3>
-            Mountain Soul
-          </h3>
-
-        </div>
-
-
-        <div class="story-grid">
-
-          <div class="story-text">
-
+          <div class="chapter-copy">
             <p>
               The mountains have been my sanctuary since forever.
               This is where I feel most at home, where my every
               worry fades and is replaced by a profound sense of peace.
             </p>
-
-            <br>
-
             <p>
               To me, reaching the destination is never just about
               the view. It is about the mental and physical grit
@@ -2098,80 +2454,75 @@
               shared joy of reaching a goal together with a group
               of friends.
             </p>
-
-            <br>
-
-            <p>
+            <div class="chapter-pullquote">
               Beyond the tranquility, I crave the adrenaline rush
               that only mountain peaks can provide.
-            </p>
-
-            <br>
-
+            </div>
             <p>
               This mountain soul made of resilience, collaboration,
               and desire to go beyond my limits is a core part of
               who I am both on the trails and out.
             </p>
-
           </div>
-
-
-          <div class="story-image">
-
-            <img
-              src="Montagna%20copy.jpg"
-              alt="Mountain landscape"
-            >
-
-            <div class="story-caption">
-              Somewhere above the clouds.
-            </div>
-
-          </div>
-
         </div>
-
       </article>
 
+      <article class="beyond-chapter" id="creative">
+        <aside class="chapter-meta">
+          <div class="chapter-number">02</div>
+          <div class="chapter-type">Creative Edge</div>
+          <div class="chapter-keywords">
+            <span>DIY</span>
+            <span>Design</span>
+            <span>Photography</span>
+            <span>Making</span>
+          </div>
+        </aside>
 
-      <!-- CREATIVITY -->
+        <div class="chapter-main">
+          <h3 class="chapter-title">Creative<br><em>Edge.</em></h3>
 
-      <article class="story reveal">
-
-        <div class="story-heading">
-
-          <span class="story-number">
-            02
-          </span>
-
-          <h3>
-            Creative Edge
-          </h3>
-
-        </div>
-
-
-        <div class="story-grid reverse">
-
-          <div class="story-text">
-
+          <div class="chapter-copy">
             <p>
               Creativity has always been my way of exploring the
               world and thinking outside the box.
             </p>
-
-            <br>
-
             <p>
               It's a trait I probably inherited from my father.
               I grew up in his workshop, learning the art of
               working with wood and the vision required to build
               something from scratch.
             </p>
+          </div>
 
-            <br>
+          <div class="creative-gallery" id="creativeGallery">
+            <div class="creative-track">
+              <figure class="creative-card">
+                <img src="1774431164142.JPG" alt="Creative work">
+                <figcaption class="creative-card-label">Making things, just because I can.</figcaption>
+              </figure>
 
+              <!-- Replace these three filenames ONLY if your repository uses different names. -->
+              <figure class="creative-card">
+                <img src="Creative%202.jpg" alt="Creative project">
+                <figcaption class="creative-card-label">Digital design</figcaption>
+              </figure>
+
+              <figure class="creative-card">
+                <img src="Creative%203.jpg" alt="Creative project">
+                <figcaption class="creative-card-label">Painting &amp; colour</figcaption>
+              </figure>
+
+              <figure class="creative-card">
+                <img src="Creative%204.jpg" alt="Creative project">
+                <figcaption class="creative-card-label">DIY / built from scratch</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="gallery-hint">Drag to explore · Click an image to enlarge</div>
+
+          <div class="chapter-copy">
             <p>
               Today, this DIY spirit translates into many forms:
               from photography and acrylic painting to digital design.
@@ -2179,49 +2530,47 @@
               for my kitchen or designing on a computer, I love the
               process of bringing an idea to life.
             </p>
-
           </div>
-
-
-          <div class="story-image">
-
-            <img
-              src="1774431164142.JPG"
-              alt="Creative work"
-            >
-
-            <div class="story-caption">
-              Making things, just because I can.
-            </div>
-
-          </div>
-
         </div>
-
       </article>
 
+      <article class="beyond-chapter" id="volleyball">
+        <aside class="chapter-meta">
+          <div class="chapter-number">03</div>
+          <div class="chapter-type">Team Spirit</div>
+          <div class="chapter-keywords">
+            <span>Discipline</span>
+            <span>Strategy</span>
+            <span>Communication</span>
+            <span>Trust</span>
+          </div>
+        </aside>
 
-      <!-- VOLLEYBALL -->
+        <div class="chapter-main">
+          <h3 class="chapter-title">Team<br><em>Spirit.</em></h3>
 
-      <article class="story reveal">
+          <div class="volleyball-stage">
+            <img class="volley-image" src="Volley%201.jpg" alt="Volleyball action">
+            <div class="volley-content">
+              <div class="volley-top">
+                <span>14 → 19</span>
+                <span>03 / 03</span>
+              </div>
+              <div class="volley-number">20+</div>
+              <div class="volley-middle">
+                <h4>Hours of training every week</h4>
+                <p>Excellence is built through daily discipline and ambition.</p>
+              </div>
+              <div class="volley-bottom">
+                <span class="volley-pill">Libero</span>
+                <span class="volley-pill">Read the game</span>
+                <span class="volley-pill">Stay one step ahead</span>
+                <span class="volley-pill">Trust the team</span>
+              </div>
+            </div>
+          </div>
 
-        <div class="story-heading">
-
-          <span class="story-number">
-            03
-          </span>
-
-          <h3>
-            Team Spirit
-          </h3>
-
-        </div>
-
-
-        <div class="story-grid">
-
-          <div class="story-text">
-
+          <div class="chapter-copy">
             <p>
               From the age of 14 to 19, the volleyball court was
               my second home. Dedicating over 20 hours a week to
@@ -2229,52 +2578,40 @@
               excellence is built through daily discipline
               and ambition.
             </p>
-
-            <br>
-
+            <div class="chapter-pullquote">
+              As a Libero, I learned to read people and stay
+              one step ahead of the ball.
+            </div>
             <p>
-              As a Libero, I learned to read people and stay one
-              step ahead of the ball. More importantly, this role
-              showed me that winning is not just about physical
-              strength, it is about proactive communication
-              and a clear strategy.
+              More importantly, this role showed me that winning
+              is not just about physical strength, it is about
+              proactive communication and a clear strategy.
             </p>
-
-            <br>
-
             <p>
               Those same competitive drive and strategic mindset
               follow me into my professional life today. I recently
               joined the VSG D1 team in Mannheim to keep working
               on my resilience, trust, and collective effort.
             </p>
-
           </div>
-
-
-          <div class="story-image">
-
-            <div style="
-              background:#dcebf2;
-              min-height:420px;
-              display:flex;
-              align-items:center;
-              justify-content:center;
-              padding:40px;
-              text-align:center;
-              font-family:'Playfair Display',serif;
-              font-size:28px;
-              color:#272b2d;
-            ">
-              Team spirit<br>
-              starts here.
-            </div>
-
-          </div>
-
         </div>
-
       </article>
+
+      <section class="beyond-finale">
+        <div class="beyond-finale-inner">
+          <p>
+            Resilience on the trail.<br>
+            Curiosity in the workshop.<br>
+            Team spirit on the court.
+          </p>
+          <small>Different places. Same energy.</small>
+        </div>
+      </section>
+
+      <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+        <img id="lightboxImage" src="" alt="">
+      </div>
 
     </section>
 
@@ -2360,21 +2697,14 @@
 
     const observer = new IntersectionObserver(
       (entries) => {
-
         entries.forEach(entry => {
-
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
           }
-
         });
-
       },
-      {
-        threshold: 0.12
-      }
+      { threshold: 0.12 }
     );
-
 
     document.querySelectorAll(".reveal").forEach(el => {
       observer.observe(el);
@@ -2388,13 +2718,156 @@
     const emailButton = document.getElementById("emailButton");
     const emailSuccess = document.getElementById("emailSuccess");
 
+    if (emailButton && emailSuccess) {
+      emailButton.addEventListener("click", function () {
+        emailSuccess.classList.add("show");
+        emailButton.textContent = "Thanks for reaching out ✦";
+      });
+    }
 
-    emailButton.addEventListener("click", function () {
 
-      emailSuccess.classList.add("show");
+    /* =========================================================
+       CREATIVE DRAG GALLERY
+       ========================================================= */
 
-      emailButton.textContent = "Thanks for reaching out ✦";
+    const gallery = document.getElementById("creativeGallery");
+    const track = gallery?.querySelector(".creative-track");
 
+    if (gallery && track) {
+      let isDragging = false;
+      let startX = 0;
+      let currentX = 0;
+      let previousX = 0;
+
+      gallery.addEventListener("pointerdown", event => {
+        isDragging = true;
+        startX = event.clientX;
+        previousX = currentX;
+        gallery.setPointerCapture(event.pointerId);
+      });
+
+      gallery.addEventListener("pointermove", event => {
+        if (!isDragging) return;
+
+        const distance = event.clientX - startX;
+        currentX = previousX + distance;
+
+        const max = -(track.scrollWidth - gallery.clientWidth + 80);
+        currentX = Math.min(0, Math.max(max, currentX));
+
+        track.style.transform = `translateX(${currentX}px)`;
+      });
+
+      gallery.addEventListener("pointerup", () => {
+        isDragging = false;
+      });
+
+      gallery.addEventListener("pointercancel", () => {
+        isDragging = false;
+      });
+    }
+
+
+    /* =========================================================
+       IMAGE LIGHTBOX
+       ========================================================= */
+
+    const lightbox = document.getElementById("galleryLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".creative-card img").forEach(image => {
+      image.addEventListener("click", () => {
+        if (!lightbox || !lightboxImage) return;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+
+    lightbox?.addEventListener("click", event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeLightbox();
+    });
+
+
+    /* =========================================================
+       MOUNTAIN MOUSE PARALLAX
+       ========================================================= */
+
+    const mountain = document.querySelector(".mountain-stage");
+    const mountainImage = mountain?.querySelector("img");
+
+    if (mountain && mountainImage) {
+      mountain.addEventListener("mousemove", event => {
+        const rect = mountain.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+
+        mountainImage.style.transform =
+          `scale(1.08) translate(${x * 12}px, ${y * 12}px)`;
+      });
+
+      mountain.addEventListener("mouseleave", () => {
+        mountainImage.style.transform = "scale(1.04) translate(0,0)";
+      });
+    }
+
+
+    /* =========================================================
+       ACTIVE BEYOND CHAPTER NAVIGATION
+       ========================================================= */
+
+    const beyondLinks = document.querySelectorAll(".beyond-nav a");
+    const beyondSections = document.querySelectorAll(".beyond-chapter");
+
+    const beyondObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
+          beyondLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href") === `#${entry.target.id}`) {
+              link.classList.add("active");
+            }
+          });
+        });
+      },
+      { threshold: .45 }
+    );
+
+    beyondSections.forEach(section => beyondObserver.observe(section));
+
+
+    /* =========================================================
+       SMOOTH BEYOND NAVIGATION
+       ========================================================= */
+
+    beyondLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+
+        event.preventDefault();
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
     });
 
   </script>
