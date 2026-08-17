@@ -1797,6 +1797,152 @@ section:hover > .section-label { letter-spacing:.23em; }
       font-family: var(--font-sans);
     }
 
+
+    /* --- V2: Editorial x Digital motion system --- */
+    html { scroll-behavior: smooth; }
+
+    .hero {
+      min-height: 86vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-statement {
+      max-width: 620px;
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      line-height: 1.45;
+      margin: 1.3rem 0 0.7rem;
+    }
+
+    .hero-meta {
+      font-size: 0.76rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.68;
+      margin: 0;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: inherit;
+      font: 600 10px/1 var(--font-sans);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      z-index: 5;
+    }
+    .scroll-arrow {
+      font-size: 22px;
+      line-height: 1;
+      animation: floatArrow 1.8s ease-in-out infinite;
+    }
+    @keyframes floatArrow {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .journey-timeline {
+      position: relative;
+      margin-top: 3rem;
+    }
+    .journey-timeline::before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(20, 30, 35, .14);
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+    }
+    .journey-timeline.is-visible::before { transform: scaleY(1); }
+
+    .journey-item {
+      position: relative;
+      padding: 0 0 3.5rem 64px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+    }
+    .journey-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .journey-item::before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 6px var(--page-bg, #f5f1e8);
+      z-index: 2;
+      transition: transform .35s ease;
+    }
+    .journey-item:hover::before { transform: scale(1.35); }
+
+    .journey-item:hover .journey-title {
+      transform: translateX(6px);
+    }
+    .journey-title {
+      transition: transform .35s ease;
+    }
+
+    .skill-card {
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .section-label {
+      transition: letter-spacing .35s ease;
+    }
+    .section-label:hover {
+      letter-spacing: .16em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal, .journey-item { opacity: 1; transform: none; }
+      .journey-timeline::before { transform: scaleY(1); }
+    }
+
+    @media (max-width: 700px) {
+      .hero { min-height: 82vh; }
+      .scroll-cue { bottom: 18px; }
+      .journey-item { padding-left: 48px; }
+      .journey-timeline::before { left: 15px; }
+      .journey-item::before { left: 10px; }
+    }
+    
 </style>
 </head>
 <body><div aria-live="polite" class="translation-notice" id="translationNotice" role="status"><strong>Hinweis</strong> Diese deutsche Version wurde vorerst automatisch übersetzt. Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für dein Verständnis.<button id="translationNoticeClose" type="button">OK</button></div>
@@ -2659,5 +2805,36 @@ section:hover > .section-label { letter-spacing:.23em; }
     document.getElementById('translationNoticeClose')?.addEventListener('click', close);
     window.setTimeout(close, 7000);
   })();
-</script></body>
+</script>
+<script>
+/* V2 motion observer */
+document.addEventListener('DOMContentLoaded', () => {
+  const revealItems = document.querySelectorAll(
+    '.reveal, .journey-item, .journey-timeline'
+  );
+
+  if (!('IntersectionObserver' in window)) {
+    revealItems.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
+
+  revealItems.forEach((el, index) => {
+    if (el.classList.contains('journey-item')) {
+      el.style.transitionDelay = `${Math.min(index * 80, 400)}ms`;
+    }
+    observer.observe(el);
+  });
+});
+</script>
+
+</body>
 </html>
