@@ -1129,7 +1129,7 @@
 
       object-fit: cover;
 
-      z-index: -3;
+      z-index: 0;
 
       transform: scale(1.02);
       transition:
@@ -1188,6 +1188,7 @@
 
     .beyond-card-top {
       position: absolute;
+      z-index: 3;
       top: 22px;
       left: 22px;
       right: 22px;
@@ -1202,6 +1203,7 @@
 
     .beyond-card-content {
       position: absolute;
+      z-index: 3;
       left: 25px;
       right: 25px;
       bottom: 25px;
@@ -1667,7 +1669,7 @@
        ========================================================= */
 
     .translation-disclaimer {
-      display: none;
+      display: block;
       max-width: 760px;
       margin: 24px auto 0;
       padding: 12px 16px;
@@ -1707,8 +1709,8 @@
       <a href="#contact">Kontakt</a>
 
       <div class="language-switcher" aria-label="Language selector">
-        <button type="button" class="active" data-lang="en">EN</button>
-        <button type="button" data-lang="de">DE</button>
+        <a href="index.html">EN</a>
+        <a href="de.html" class="active" aria-current="page">DE</a>
       </div>
 
       <a href="Irene_Samadello_CV.pdf" class="nav-cv" download>Lebenslauf herunterladen ↗</a>
@@ -2975,7 +2977,7 @@
       }
     };
 
-    function openAußerhalb des BürosStory(type) {
+    function openBeyondStory(type) {
       const story = beyondStories[type];
       if (!story || !beyondModal) return;
 
@@ -2990,7 +2992,7 @@
       document.body.style.overflow = "hidden";
     }
 
-    function closeAußerhalb des BürosStory() {
+    function closeBeyondStory() {
       if (!beyondModal) return;
 
       beyondModal.classList.remove("open");
@@ -3010,33 +3012,33 @@
 
       button?.addEventListener("click", event => {
         event.stopPropagation();
-        openAußerhalb des BürosStory(type);
+        openBeyondStory(type);
       });
 
       card.addEventListener("keydown", event => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          openAußerhalb des BürosStory(type);
+          openBeyondStory(type);
         }
       });
 
       card.addEventListener("click", event => {
         if (event.target.closest("button")) return;
-        openAußerhalb des BürosStory(type);
+        openBeyondStory(type);
       });
     });
 
-    beyondModalClose?.addEventListener("click", closeAußerhalb des BürosStory);
+    beyondModalClose?.addEventListener("click", closeBeyondStory);
 
     beyondModal?.addEventListener("click", event => {
       if (event.target === beyondModal) {
-        closeAußerhalb des BürosStory();
+        closeBeyondStory();
       }
     });
 
     document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
-        closeAußerhalb des BürosStory();
+        closeBeyondStory();
       }
     });
 
