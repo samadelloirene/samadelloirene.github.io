@@ -1687,7 +1687,6 @@
       <div class="language-switcher" aria-label="Language selector">
         <button type="button" class="active" data-lang="en">EN</button>
         <button type="button" data-lang="de">DE</button>
-        <button type="button" data-lang="it">IT</button>
       </div>
 
       <a href="Irene_Samadello_CV.pdf" class="nav-cv" download>Download CV ↗</a>
@@ -1812,6 +1811,11 @@
         <div class="language-note">
           <span class="language-note-label">Three languages. One global mindset.</span>
           <span>German · English · Italian</span>
+        </div>
+
+        <div class="translation-disclaimer" id="translationDisclaimer">
+          <strong>Hinweis:</strong> Diese deutsche Version wurde vorerst automatisch übersetzt.
+          Ich arbeite bereits an einer vollständig überarbeiteten deutschen Version — danke für Ihr Verständnis.
         </div>
 
       </div>
@@ -2583,7 +2587,7 @@
         <article class="beyond-card mountain-card reveal" tabindex="0">
 
           <img
-            src="Climbing.png"
+            src="Climbing.jpg"
             alt="Mountain climbing"
             class="beyond-card-image"
           >
@@ -2878,7 +2882,7 @@
       mountain: {
         label: "01 — Mountain Soul",
         title: "Where the noise disappears.",
-        image: "Climbing.png",
+        image: "Climbing.jpg",
         html: `
           <p>
             The mountains are where I feel most at home — where every
@@ -3021,25 +3025,50 @@
     });
 
 
+    .translation-disclaimer {
+      display: none;
+      max-width: 760px;
+      margin: 24px auto 0;
+      padding: 12px 16px;
+      border-left: 2px solid var(--charcoal);
+      background: rgba(255,255,255,.5);
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+      letter-spacing: .02em;
+    }
+
+    .translation-disclaimer.visible {
+      display: block;
+    }
+
     /* =========================================================
        LANGUAGE SWITCHER
        ========================================================= */
 
     const languageButtons = document.querySelectorAll(".language-switcher button");
+    const translationDisclaimer = document.getElementById("translationDisclaimer");
+
+    // If the page was opened with ?de=1, show the German translation notice.
+    if (new URLSearchParams(window.location.search).get("de") === "1") {
+      translationDisclaimer?.classList.add("visible");
+    }
 
     function translatePortfolio(lang) {
+      const baseUrl = window.location.origin + window.location.pathname + "?de=1";
+
       if (lang === "en") {
-        window.location.href = window.location.href.split("#")[0];
+        window.location.href = window.location.origin + window.location.pathname;
         return;
       }
 
-      const translatedUrl =
-        "https://translate.google.com/translate?sl=en&tl=" +
-        lang +
-        "&u=" +
-        encodeURIComponent(window.location.href.split("#")[0]);
+      if (lang === "de") {
+        const translatedUrl =
+          "https://translate.google.com/translate?sl=en&tl=de&u=" +
+          encodeURIComponent(baseUrl);
 
-      window.location.href = translatedUrl;
+        window.location.href = translatedUrl;
+      }
     }
 
     languageButtons.forEach(button => {
