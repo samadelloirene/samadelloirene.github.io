@@ -739,7 +739,7 @@
 
 
     /* =========================================================
-       BEYOND
+       
        ========================================================= */
 
     .beyond {
@@ -1075,28 +1075,49 @@
       transform: scale(1.09);
     }
 
-    .beyond-card-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
+   .beyond-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
 
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(20,24,26,.22) 0%,
-          rgba(20,24,26,.05) 35%,
-          rgba(20,24,26,.86) 100%
-        );
-    }
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15,20,22,.42) 0%,
+      rgba(15,20,22,.18) 30%,
+      rgba(15,20,22,.58) 58%,
+      rgba(15,20,22,.94) 100%
+    );
 
-    .creative-card .beyond-card-overlay {
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(20,24,26,.12),
-          rgba(20,24,26,.88)
-        );
-    }
+  transition: background .45s ease;
+}
+
+
+/* Creative card gets a slightly stronger overlay */
+
+.creative-card .beyond-card-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15,20,22,.38),
+      rgba(15,20,22,.20) 35%,
+      rgba(15,20,22,.92) 100%
+    );
+}
+
+
+/* ADD THIS HERE */
+
+.beyond-card:hover .beyond-card-overlay,
+.beyond-card:focus .beyond-card-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15,20,22,.32) 0%,
+      rgba(15,20,22,.12) 32%,
+      rgba(15,20,22,.92) 100%
+    );
+}
 
     .beyond-card-top {
       position: absolute;
@@ -2522,7 +2543,7 @@
         <article class="beyond-card mountain-card reveal" tabindex="0">
 
           <img
-            src="Montagna%20copy.jpg"
+            src="creative.png"
             alt="Mountain landscape"
             class="beyond-card-image"
           >
@@ -2564,7 +2585,7 @@
         <article class="beyond-card creative-card reveal" tabindex="0">
 
           <img
-            src="1774431164142.JPG"
+            src="creative.png"
             alt="Creative work"
             class="beyond-card-image"
           >
@@ -2612,7 +2633,7 @@
         <article class="beyond-card volley-card reveal" tabindex="0">
 
           <img
-            src="Volley%201.jpg"
+            src="volley1.png"
             alt="Volleyball action"
             class="beyond-card-image"
           >
