@@ -458,432 +458,284 @@
       color: var(--muted);
     }
 
-<!-- =========================================================
-     EDUCATION & SKILLS
-     ========================================================= -->
 
-<section class="education" id="education">
+    /* =========================================================
+       EDUCATION
+       ========================================================= */
 
-  <div class="education-intro reveal">
+    .education {
+      background: var(--blue-soft);
+    }
 
-    <div class="section-label">
-      03 — Education & Skills
-    </div>
+    .education-intro {
+      max-width: 850px;
+      margin-bottom: 75px;
+    }
 
-    <h2>
-      Built on curiosity,<br>
-      shaped by experience.
-    </h2>
+    .education-intro p {
+      max-width: 650px;
 
-    <p>
-      A solid foundation in Economics and Management, specialized
-      in Marketing and Sales through international experiences.
-    </p>
+      margin-top: 25px;
 
-  </div>
+      font-size: 17px;
 
+      color: var(--muted);
+    }
 
-  <div class="education-content">
+    .education-content {
+      max-width: 1250px;
+    }
 
+    .education-item {
+      display: grid;
 
-    <!-- =====================================================
-         MASTER
-         ===================================================== -->
+      grid-template-columns: 220px minmax(0, 1fr);
 
-    <article class="education-item reveal">
+      gap: 6vw;
 
-      <div class="education-meta">
+      padding: 55px 0 65px;
 
-        <span class="education-year">
-          2021 — 2025
-        </span>
+      border-top: 1px solid var(--line);
+    }
 
-        <span class="education-location">
-          Mannheim, Germany
-        </span>
+    .education-meta {
+      display: flex;
+      flex-direction: column;
 
-      </div>
+      gap: 6px;
 
+      padding-top: 7px;
 
-      <div class="education-main">
+      color: var(--muted);
 
-        <h3>
-          Universität Mannheim
-        </h3>
+      font-size: 11px;
 
-        <div class="degree">
-          M.Sc. Management
-        </div>
+      line-height: 1.5;
+    }
 
-        <div class="focus">
-          Marketing & Sales
-        </div>
+    .education-year {
+      font-weight: 600;
 
-        <p>
-          Studying at one of Germany's top business schools,
-          surrounded by some of the most talented students
-          worldwide, has been a deeply rewarding challenge.
-          A defining moment of this journey was writing my
-          thesis with the Chair of Professor Homburg, the very
-          author whose books formed the foundation of my
-          Bachelor's studies. It was a powerful "full-circle"
-          moment that made me realize how far I've come.
-        </p>
+      color: var(--charcoal);
+    }
 
-        <p>
-          Beyond the academic prestige, Mannheim taught me a
-          new way of thinking: prioritizing practicality over
-          rote learning. Over these years, Germany has become
-          more than just a place of study; it's where I've
-          consolidated my German skills, built lasting
-          friendships, and truly started to feel at home.
-        </p>
+    .education-location {
+      color: var(--muted);
+    }
 
-        <div class="grade">
+    .education-main {
+      max-width: 800px;
+    }
 
-          <span>
-            Final Grade
-          </span>
+    .education-main h3 {
+      font-family: "Playfair Display", serif;
 
-          <strong>
-            1.6
-          </strong>
+      font-size: clamp(34px, 4vw, 52px);
 
-        </div>
+      font-weight: 400;
 
-      </div>
+      line-height: 1;
 
-    </article>
+      letter-spacing: -.035em;
 
+      margin-bottom: 12px;
+    }
 
-    <!-- =====================================================
-         EXCHANGE
-         ===================================================== -->
+    .degree {
+      font-size: 16px;
 
-    <article class="education-item reveal">
+      font-weight: 600;
 
-      <div class="education-meta">
+      color: var(--charcoal);
+    }
 
-        <span class="education-year">
-          2019 — 2020
-        </span>
+    .focus {
+      display: inline-block;
 
-        <span class="education-location">
-          Augsburg, Germany
-        </span>
+      margin-top: 7px;
 
-      </div>
+      color: var(--accent);
 
+      font-size: 12px;
 
-      <div class="education-main">
+      letter-spacing: .04em;
+    }
 
-        <h3>
-          Universität Augsburg
-        </h3>
+    .education-main p {
+      max-width: 780px;
 
-        <div class="degree">
-          Exchange Semester
-        </div>
+      margin-top: 25px;
 
-        <div class="focus">
-          Media Marketing & Product Management
-        </div>
+      font-size: 14px;
 
-        <p>
-          This semester was the true turning point that
-          redefined my path. It was here, while successfully
-          tackling exams in both German and English, that I
-          realized I wanted to build my future in Germany.
-          This experience was pivotal in my decision to pursue
-          my Master's at the University of Mannheim, as it gave
-          me the confidence to thrive in the German academic
-          and professional system.
-        </p>
+      line-height: 1.8;
 
-        <p>
-          Living in a global community and pushing past my own
-          boundaries, I discovered a strength and resilience
-          I didn't know I had. I realized I could navigate
-          challenges and adapt to any environment, a realization
-          that still drives my ambition and my can-do attitude
-          in everything I do.
-        </p>
+      color: var(--charcoal-soft);
+    }
 
-      </div>
+    .grade {
+      display: inline-flex;
 
-    </article>
+      align-items: center;
 
+      gap: 14px;
 
-    <!-- =====================================================
-         BACHELOR
-         ===================================================== -->
+      margin-top: 30px;
 
-    <article class="education-item reveal">
+      padding: 9px 15px;
 
-      <div class="education-meta">
+      border: 1px solid var(--line);
 
-        <span class="education-year">
-          2017 — 2020
-        </span>
+      background: rgba(255,255,255,.55);
 
-        <span class="education-location">
-          Trento, Italy
-        </span>
+      font-size: 10px;
 
-      </div>
+      text-transform: uppercase;
 
+      letter-spacing: .1em;
 
-      <div class="education-main">
+      color: var(--muted);
+    }
 
-        <h3>
-          Università di Trento
-        </h3>
+    .grade strong {
+      color: var(--charcoal);
 
-        <div class="degree">
-          B.Sc. Economics & Management
-        </div>
+      font-size: 15px;
 
-        <div class="focus">
-          Market Analysis & Statistics
-        </div>
+      letter-spacing: 0;
+    }
 
-        <p>
-          My journey began here, where I developed a rigorous
-          foundation in quantitative analysis and economic theory,
-          graduating with top marks. Beyond the academic structure,
-          this experience was my first real step into an international
-          mindset. Living away from home for the first time, I grew
-          immensely, not just as a student, but as an individual.
-        </p>
 
-        <p>
-          It was during these years that I learned the importance
-          of looking at the "why" behind numbers, a skill that has
-          been the backbone of my professional logic ever since.
-        </p>
+    /* =========================================================
+       SKILLS
+       ========================================================= */
 
-        <div class="grade">
+    .skills-section {
+      border-top: 1px solid var(--line);
 
-          <span>
-            Final Grade
-          </span>
+      margin-top: 20px;
 
-          <strong>
-            110/110
-          </strong>
+      padding-top: 80px;
+    }
 
-        </div>
+    .skills-heading {
+      display: grid;
 
-      </div>
+      grid-template-columns: 220px 1fr;
 
-    </article>
+      gap: 6vw;
 
+      align-items: start;
 
-    <!-- =====================================================
-         SKILLS
-         ===================================================== -->
+      margin-bottom: 50px;
+    }
 
-    <div class="skills-section reveal">
+    .skills-heading .section-label {
+      margin: 0;
+    }
 
-      <div class="skills-heading">
+    .skills-heading h3 {
+      font-family: "Playfair Display", serif;
 
-        <div>
+      font-size: clamp(35px, 4.5vw, 60px);
 
-          <div class="section-label">
-            Skills
-          </div>
+      font-weight: 400;
 
-        </div>
+      line-height: .98;
 
-        <h3>
-          Tools I use<br>
-          to make things happen.
-        </h3>
+      letter-spacing: -.04em;
+    }
 
-      </div>
+    .skills-grid {
+      display: grid;
 
+      grid-template-columns: repeat(2, minmax(0, 1fr));
 
-      <div class="skills-grid">
+      gap: 18px;
+    }
 
+    .skill-card {
+      position: relative;
 
-        <!-- DESIGN -->
+      min-height: 270px;
 
-        <div class="skill-card">
+      padding: 32px;
 
-          <div class="skill-number">
-            01 — DESIGN & CREATIVITY
-          </div>
+      background: var(--white);
 
-          <h4>
-            Design & Creativity
-          </h4>
+      border: 1px solid rgba(95, 135, 152, .18);
 
-          <ul>
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
 
-            <li>
-              Adobe Illustrator
-              <span>(Basic)</span>
-            </li>
+    .skill-card:hover {
+      transform: translateY(-4px);
 
-            <li>
-              AEM
-            </li>
+      border-color: var(--blue-medium);
 
-            <li>
-              Canva Pro
-            </li>
+      box-shadow: 0 14px 35px rgba(39, 43, 45, .07);
+    }
 
-            <li>
-              CapCut
-            </li>
+    .skill-number {
+      font-size: 9px;
 
-            <li>
-              Figma
-              <span>(Basic)</span>
-            </li>
+      letter-spacing: .15em;
 
-            <li>
-              Google Sites
-            </li>
+      color: var(--muted);
 
-          </ul>
+      margin-bottom: 28px;
+    }
 
-        </div>
+    .skill-card h4 {
+      font-family: "Playfair Display", serif;
 
+      font-size: 30px;
 
-        <!-- PRODUCTIVITY -->
+      font-weight: 400;
 
-        <div class="skill-card">
+      line-height: 1;
 
-          <div class="skill-number">
-            02 — PRODUCTIVITY
-          </div>
+      margin-bottom: 25px;
+    }
 
-          <h4>
-            Productivity
-          </h4>
+    .skill-card ul {
+      list-style: none;
 
-          <ul>
+      display: grid;
 
-            <li>
-              ChatGPT
-            </li>
+      grid-template-columns: 1fr 1fr;
 
-            <li>
-              Gemini
-            </li>
+      gap: 9px 25px;
+    }
 
-            <li>
-              Microsoft Office
-            </li>
+    .skill-card li {
+      position: relative;
 
-            <li>
-              Excel
-            </li>
+      padding-left: 14px;
 
-            <li>
-              PowerPoint
-            </li>
+      font-size: 12px;
 
-            <li>
-              Word
-            </li>
+      color: var(--charcoal-soft);
+    }
 
-            <li>
-              SharePoint
-            </li>
+    .skill-card li::before {
+      content: "—";
 
-            <li>
-              Outlook
-            </li>
+      position: absolute;
 
-          </ul>
+      left: 0;
 
-        </div>
+      color: var(--accent);
+    }
 
+    .skill-card li span {
+      color: var(--muted);
 
-        <!-- OPERATIONS -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            03 — OPERATIONS
-          </div>
-
-          <h4>
-            Operations
-          </h4>
-
-          <ul>
-
-            <li>
-              Freshdesk
-            </li>
-
-            <li>
-              Magento
-            </li>
-
-            <li>
-              Salesforce
-              <span>(Basic)</span>
-            </li>
-
-            <li>
-              SAP Concur
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- DATA -->
-
-        <div class="skill-card">
-
-          <div class="skill-number">
-            04 — DATA & ANALYSIS
-          </div>
-
-          <h4>
-            Data & Analysis
-          </h4>
-
-          <ul>
-
-            <li>
-              Bitly
-            </li>
-
-            <li>
-              Google Analytics 4
-            </li>
-
-            <li>
-              Meta Business Suite
-            </li>
-
-            <li>
-              SAP Analytics Cloud
-            </li>
-
-            <li>
-              Tableau
-            </li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
+      font-size: 10px;
+    }
 
 
     /* =========================================================
@@ -1028,6 +880,8 @@
     .contact-link {
       display: inline-block;
 
+      width: fit-content;
+
       margin-top: 38px;
 
       padding-bottom: 6px;
@@ -1038,6 +892,8 @@
 
       color: var(--blue);
 
+      cursor: pointer;
+
       transition:
         color .25s ease,
         border-color .25s ease;
@@ -1047,6 +903,44 @@
       color: var(--white);
 
       border-color: var(--white);
+    }
+
+    .contact-success {
+      display: none;
+
+      margin-top: 24px;
+
+      max-width: 500px;
+
+      padding: 15px 18px;
+
+      border-left: 2px solid var(--blue-medium);
+
+      background: rgba(220, 235, 242, .08);
+
+      color: #dcebf2;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    .contact-success.show {
+      display: block;
+
+      animation: fadeIn .5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
 
@@ -1182,8 +1076,16 @@
         font-size: 36px;
       }
 
+      .education-meta {
+        padding-top: 0;
+      }
+
+
+      /* SKILLS MOBILE */
+
       .skills-section {
         margin-top: 10px;
+
         padding-top: 55px;
       }
 
@@ -1201,6 +1103,7 @@
 
       .skill-card {
         min-height: auto;
+
         padding: 30px;
       }
 
@@ -1734,7 +1637,9 @@
       <div class="education-content">
 
 
-        <!-- MASTER -->
+        <!-- =====================================================
+             MASTER
+             ===================================================== -->
 
         <article class="education-item reveal">
 
@@ -1802,7 +1707,9 @@
         </article>
 
 
-        <!-- EXCHANGE -->
+        <!-- =====================================================
+             EXCHANGE
+             ===================================================== -->
 
         <article class="education-item reveal">
 
@@ -1830,7 +1737,7 @@
             </div>
 
             <div class="focus">
-              Focus: Media Marketing & PM
+              Focus: Media Marketing & Product Management
             </div>
 
             <p>
@@ -1858,7 +1765,9 @@
         </article>
 
 
-        <!-- BACHELOR -->
+        <!-- =====================================================
+             BACHELOR
+             ===================================================== -->
 
         <article class="education-item reveal">
 
@@ -1921,7 +1830,9 @@
         </article>
 
 
-        <!-- SKILLS -->
+        <!-- =====================================================
+             SKILLS
+             ===================================================== -->
 
         <div class="skills-section reveal">
 
@@ -2388,14 +2299,32 @@
         a good travel story, I'd love to start a conversation with you!
       </p>
 
-      <!-- CHANGE THIS EMAIL ADDRESS -->
+
+      <!-- =====================================================
+           CONTACT BUTTON
+
+           IMPORTANT:
+           Replace YOUR-EMAIL@example.com with your real email.
+           ===================================================== -->
 
       <a
         class="contact-link reveal"
         href="mailto:YOUR-EMAIL@example.com"
+        id="emailButton"
       >
         Get in touch →
       </a>
+
+
+      <!-- SUCCESS MESSAGE -->
+
+      <div
+        class="contact-success"
+        id="emailSuccess"
+      >
+        <strong>Thank you for reaching out ✦</strong><br>
+        Your email app should open now. I look forward to hearing from you!
+      </div>
 
     </section>
 
@@ -2420,10 +2349,14 @@
 
 
   <!-- =========================================================
-       SCROLL ANIMATION
+       JAVASCRIPT
        ========================================================= -->
 
   <script>
+
+    /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -2445,6 +2378,23 @@
 
     document.querySelectorAll(".reveal").forEach(el => {
       observer.observe(el);
+    });
+
+
+    /* =========================================================
+       EMAIL CONFIRMATION
+       ========================================================= */
+
+    const emailButton = document.getElementById("emailButton");
+    const emailSuccess = document.getElementById("emailSuccess");
+
+
+    emailButton.addEventListener("click", function () {
+
+      emailSuccess.classList.add("show");
+
+      emailButton.textContent = "Thanks for reaching out ✦";
+
     });
 
   </script>
